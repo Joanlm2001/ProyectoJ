@@ -13,7 +13,7 @@ class CreateAdressessTable extends Migration
      */
     public function up()
     {
-        Schema::create('_adressess', function (Blueprint $table) {
+        Schema::create('adressess', function (Blueprint $table) {
             $table->id();
             $table->string('adress');
             $table->timestamps();
@@ -27,6 +27,6 @@ class CreateAdressessTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('_adressess');
+        Schema::dropIfExists('adressess');
     }
 }
