@@ -17,11 +17,12 @@ class CreateProductsTable extends Migration
             $table->id();
             $table->string('name',20);
             $table->double('price',3,2);
-            $table->boolean('disponible');
             $table->integer('taxe');
             $table->integer('discount');
             $table->string('image');
             $table->integer('category');
+            $table->integer('numSell');
+            $table->string('style');
             $table->foreignId('category_id')->constrained();
             $table->timestamps();
         });
