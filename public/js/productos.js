@@ -48,6 +48,7 @@ const getAll = async () => {
             descripcion.textContent = "aqui irá la desc del producto";
             precio.textContent = productos.price;
             boton.textContent = "Añadir al carrito";
+
             /* AÑADIMOS TODO A LA PÁGINA */
             divImg.append(linkImg);
             linkImg.append(img);
