@@ -6,12 +6,17 @@
 
         <x-jet-validation-errors class="mb-4" />
 
-        <form method="POST" action="{{ route('register') }}">
+        <form method="POST" action="{{ route('register') }}" id="account">
             @csrf
 
             <div>
-                <x-jet-label for="name" value="{{ __('Name') }}" />
-                <x-jet-input id="name" class="block mt-1 w-full" type="text" name="name" :value="old('name')" required autofocus autocomplete="name" />
+                <x-jet-label for="user_name" value="{{ __('Name') }}" />
+                <x-jet-input id="user_name" class="block mt-1 w-full" type="text" name="name" :value="old('name')" required autofocus autocomplete="name" />
+            </div>
+
+            <div>
+                <x-jet-label for="NIF" value="{{ __('dni') }}" />
+                <x-jet-input id="NIF" class="block mt-1 w-full" type="text" name="NIF_user" :value="old('dni')" required autofocus autocomplete="dni" />
             </div>
 
             <div class="mt-4">
@@ -20,8 +25,8 @@
             </div>
 
             <div class="mt-4">
-                <x-jet-label for="password" value="{{ __('Password') }}" />
-                <x-jet-input id="password" class="block mt-1 w-full" type="password" name="password" required autocomplete="new-password" />
+                <x-jet-label for="user_password" value="{{ __('Password') }}" />
+                <x-jet-input id="user_password" class="block mt-1 w-full" type="password" name="password" required autocomplete="new-password" />
             </div>
 
             <div class="mt-4">
