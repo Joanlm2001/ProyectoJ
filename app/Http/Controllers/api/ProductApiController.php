@@ -94,7 +94,7 @@ class ProductApiController extends Controller
 
         $product->save();
 
-        return $product;
+        return response()->json(["nombre"=>$product->name], 201);
     }
 
     /**
@@ -106,6 +106,6 @@ class ProductApiController extends Controller
     public function destroy(Request $request)
     {
         $product=Product::destroy($request->id);
-        return $product;
+        return "El producto " . $product . "ha sido eliminado";
     }
 }
