@@ -5500,7 +5500,7 @@ function mostrarError(mensaje, ubicacion) {
 
   setTimeout(function () {
     error.remove();
-  }, 8000);
+  }, 10000);
 }
 /* FORULARIO REGISTRO */
 
@@ -5529,6 +5529,7 @@ NIF.addEventListener('input', leerTexto2);
 user_name.addEventListener('input', leerTexto2);
 email.addEventListener('input', leerTexto2);
 user_password.addEventListener('input', leerTexto2);
+password_confirmation.addEventListener('input', leerTexto2);
 /* FORMULARIO PARA LAS CUENTAS */
 
 formulario_account.addEventListener('submit', function (e) {
@@ -5740,6 +5741,8 @@ function validarContraseña(password) {
   }
 }
 /* ----------------------------------------------------------------------------------------------------------- */
+
+/* MOSTRAR PRODUCTOS SEGUN CATEGORIA */
 
 /***/ }),
 
