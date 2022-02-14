@@ -15,7 +15,8 @@ class ProductApiController extends Controller
      */
     public function index()
     {
-        //
+        $products = Product::all();
+        return response()->json($products);
     }
 
     /**
@@ -34,6 +35,7 @@ class ProductApiController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
+
     public function store(Request $request)
     {
         $product = new Product();
@@ -81,7 +83,18 @@ class ProductApiController extends Controller
      */
     public function update(Request $request, Product $product)
     {
-        //
+        $product = new Product();
+        $product->name = $request->name;
+        $product->price = $request->price;
+        $product->disponible = $request->disponible;
+        $product->taxe = $request->taxe;
+        $product->discount = $request->discount;
+        $product->image = $request->image;
+        $product->category = $request->category;
+
+        $product->save();
+
+        return $product;
     }
 
     /**
@@ -90,8 +103,9 @@ class ProductApiController extends Controller
      * @param  \App\Models\Product  $product
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Product $product)
+    public function destroy(Request $request)
     {
-        //
+        $product=Product::destroy($request->id);
+        return $product;
     }
 }
