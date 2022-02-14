@@ -6,3 +6,4 @@
 No hay productos
 @endforelse
 @endsection
+
