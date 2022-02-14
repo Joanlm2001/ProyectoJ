@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
 use App\Models\Product;
+use Illuminate\Http\Request;
 
 class ProductController extends Controller
 {
@@ -14,8 +14,7 @@ class ProductController extends Controller
      */
     public function index()
     {
-        $products = Product::all();
-        return $products;
+        //
     }
 
     /**
@@ -36,16 +35,16 @@ class ProductController extends Controller
      */
     public function store(Request $request)
     {
-
+        //
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param  \App\Models\Product  $product
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Product $product)
     {
         //
     }
@@ -53,10 +52,10 @@ class ProductController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
+     * @param  \App\Models\Product  $product
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Product $product)
     {
         //
     }
@@ -65,34 +64,22 @@ class ProductController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
+     * @param  \App\Models\Product  $product
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request)
+    public function update(Request $request, Product $product)
     {
-        $product = new Product();
-        $product->name = $request->name;
-        $product->price = $request->price;
-        $product->disponible = $request->disponible;
-        $product->taxe = $request->taxe;
-        $product->discount = $request->discount;
-        $product->image = $request->image;
-        $product->category = $request->category;
-
-        $product->save();
-
-        return $product;
+        //
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+     * @param  \App\Models\Product  $product
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Request $request)
+    public function destroy(Product $product)
     {
-        $product=Product::destroy($request->id);
-        return $product;
+        //
     }
 }

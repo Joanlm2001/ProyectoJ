@@ -16,6 +16,8 @@ class CreateAdressessTable extends Migration
         Schema::create('adressess', function (Blueprint $table) {
             $table->id();
             $table->string('adress');
+            $table->integer('user');
+            $table->foreignId('user_id')->constrained();
             $table->timestamps();
         });
     }
