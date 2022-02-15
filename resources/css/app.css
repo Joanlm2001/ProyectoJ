@@ -3,7 +3,6 @@
 @import 'tailwindcss/utilities';
 
 /* ----------------------------------------------------------------- */
-
 :root {
     --texto: 'Open Sans', sans-serif;
     --titulo: 'Domine', serif;
@@ -78,7 +77,7 @@ a:link{
 
 
 
-/******************** HEADER **********************/
+/*********************************************************** HEADER *************************************************************/
 /* MENÚ STICKY */
 #menu-sticky {
     overflow: hidden;
@@ -96,22 +95,22 @@ a:link{
 }
 
 
-/********* HAMBURGER ********/
+/************************* HAMBURGER ************************/
 #menu__toggle {
     opacity: 0;
   }
-  #menu_toggle:checked + .menu_btn > span {
+  #menu__toggle:checked + .menu__btn > span {
     transform: rotate(45deg);
   }
-  #menu_toggle:checked + .menu_btn > span::before {
+  #menu__toggle:checked + .menu__btn > span::before {
     top: 0;
     transform: rotate(0deg);
   }
-  #menu_toggle:checked + .menu_btn > span::after {
+  #menu__toggle:checked + .menu__btn > span::after {
     top: 0;
     transform: rotate(90deg);
   }
-  #menu_toggle:checked ~ .menu_box {
+  #menu__toggle:checked ~ .menu__box {
     left: 0 !important;
   }
   .menu__btn {
@@ -166,7 +165,7 @@ a:link{
   .menu__item:hover {
     background-color: #CFD8DC;
 }
-/******* FIN HAMBURGER *******/
+/******************* FIN HAMBURGER *********************/
 
 
 /* LOGOTIPO  */
@@ -195,7 +194,7 @@ a:link{
     z-index: 1;
     height: 50px;
 }
-/********** FIN LOGOTIPO *********/
+/***************************** FIN LOGOTIPO **************************/
 
 
 
@@ -260,6 +259,7 @@ header section div ul {
 #iconos-acceso {
     display: flex;
     list-style: none;
+    padding: 1rem 0;
 }
 
 #iconos-acceso ul li{
@@ -313,8 +313,8 @@ body header nav > ul > li{
 }
 
 
-/******** Buscador *******/
-input[type="text"] {
+/*********************** Buscador ******************/
+.buscador {
     background-color: white;
     font-size: 1rem;
     display: inline-block;
@@ -333,17 +333,17 @@ input[type="text"] {
     cursor: pointer;
 }
 
-input[type="text"]:focus:hover {
+.buscador:focus:hover {
     border-bottom: 1px solid var(--dorado);
 }
 
-input[type="text"]:focus {
+.buscador:focus {
     width: fit-content;
     z-index: 1;
     border-bottom: 1px solid var(--dorado);
     cursor: text;
 }
-input[type="submit"] {
+.buscador-boton {
     display: inline-block;
     border: none;
     position: absolute;
@@ -354,13 +354,13 @@ input[type="submit"] {
     transition: opacity .4s ease;
 }
 
-input[type="submit"]:hover {
+.buscador-boton:hover {
     opacity: 0.8;
 }
 /* Fin de Buscador */
 
 
-/***** PÁGINA ADMIN ****/
+/************* PÁGINA ADMIN ************/
 
 .flex-container-admin {
     display: flex;
@@ -392,13 +392,117 @@ input[type="submit"]:hover {
     transform: scale(1.05);
     color: var(--azulOscuro);
 }
-/* Fin de botón Ver más */
+/********** Fin de PÁGINA ADMIN **********/
+
+
+/************* PÁGINA GESTIÓN STOCK ************/
+
+#div-gestion-stock {
+    display: flex;
+    justify-content: center;
+    padding: 4rem;
+}
+
+.botones-gestion-stock {
+    font-size: 1rem;
+    font-family: var(--texto);
+    font-weight: bold;
+    text-transform: uppercase;
+    margin: 1rem;
+    padding: 1rem 2rem;
+    border: 2px solid var(--azulOscuro);
+    color: var(--azulOscuro);
+    border-radius: 0.3rem;
+    transition: 100ms cubic-bezier(0.77, 0, 0.175, 1);
+}
+
+.botones-gestion-stock:hover {
+    transform: scale(1.05);
+}
+/********** Fin de GESTIÓN STOCK **********/
 
 
 
-/********************* MAIN ************************/
 
-/****** SLIDER ********/
+/****************** SHOPPING CART ******************/
+
+#subtitulo {
+    font-size: 1rem;
+    font-family: var(--texto);
+    letter-spacing: 0;
+    border: 2px solid;
+    padding: 0.5rem 1rem;
+    color: var(--dorado);
+}
+
+.cart {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    border: 2px solid;
+    margin: 1rem 10rem;
+}
+
+.cart img {
+    width: 30%;
+    margin: 1rem;
+}
+
+.precio-cart {
+    color: var(--azulClaro);
+    font-weight: bold;
+    font-size: 1.5rem;
+    border-top: 2px solid;
+    border-bottom: 2px solid;
+    width: 90%;
+    text-align: center;
+}
+
+#boton-comprar {
+    display: flex;
+    justify-content: center;
+    padding: 2rem;
+}
+
+#boton-comprar button {
+    text-transform: uppercase;
+    font-family: var(--texto);
+    font-size: 1rem;
+    letter-spacing: 0.1rem;
+    padding: 1.8rem;
+    color: var(--blanco);
+    background-color: var(--azulOscuro);
+    border-radius: 0.3rem;
+    transition: 100ms cubic-bezier(0.77, 0, 0.175, 1);
+}
+
+#boton-comprar button:hover {
+    transform: scale(1.05);
+}
+
+.cart button {
+   /*  background-color: rgba(216, 92, 92, 0.972); */
+   background-color: var(--gris);
+    color: var(--azulOscuro);
+    font-family: var(--texto);
+    font-weight: bold;
+    text-transform: uppercase;
+    padding: 0.5rem;
+    transition: 100ms cubic-bezier(0.77, 0, 0.175, 1);
+}
+
+.cart button:hover {
+    transform: scale(1.05);
+}
+
+/************** Fin de SHOPPING CART **************/
+
+
+
+
+/************************************************************** MAIN *********************************************************************/
+
+/****************** SLIDER ********************/
 
 /* Animación Slider */
 .fade {
@@ -425,7 +529,7 @@ input[type="submit"]:hover {
     display: flex;
     align-items: center;
     justify-content: flex-end;
-    background-image: url(../img/nordico.jpg);
+    background-image: url(img/nordico.jpg);
     background-position-y: center;
     height: 30rem;
     background-size: cover;
@@ -478,7 +582,7 @@ input[type="submit"]:hover {
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: flex-start;
-    background-image: url(../img/boho.jpg);
+    background-image: url(img/boho.jpg);
     background-position-y: center;
     height: 30rem;
     background-size: cover;
@@ -525,7 +629,7 @@ input[type="submit"]:hover {
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: flex-start;
-    background-image: url(../img/industrial.jpg);
+    background-image: url(img/industrial.jpg);
     background-position-y: center;
     height: 30rem;
     background-size: cover;
@@ -577,7 +681,7 @@ input[type="submit"]:hover {
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: flex-start;
-    background-image: url(../img/glamour.jpg);
+    background-image: url(img/glamour.jpg);
     background-position-y: top;
     height: 30rem;
     background-size: cover;
@@ -618,9 +722,10 @@ input[type="submit"]:hover {
 }
 
 
-/******* PRODUCTOS *******/
+/******************* PRODUCTOS *******************/
 #container-products img {
     width: 100%;
+    padding: 4rem;
 }
 
 #textos-featured {
@@ -637,7 +742,6 @@ input[type="submit"]:hover {
 #container-products {
     display: grid;
     grid-template-columns: repeat(3,1fr);
-    grid-template-rows: repeat(5,1fr);
     align-items: center;
     justify-items: center;
     text-align: center;
@@ -735,7 +839,7 @@ input[type="submit"]:hover {
 }
 /* Fin de botón Ver más */
 
-/********************* FOOTER ************************/
+/************************************************************** FOOTER *********************************************************************/
 
 #contenedor-footer {
     display: grid;
@@ -755,7 +859,7 @@ input[type="submit"]:hover {
 
 .li-footer {
     text-decoration: none;
-    font-size: 0.8rem;
+    font-size: 1rem;
     color: rgb(118, 118, 118);
     font-weight: 600;
     line-height: 1.6rem;
@@ -765,20 +869,9 @@ input[type="submit"]:hover {
     color: var(--dorado);
 }
 
-.li-footer-info {
-    border-right: 2px solid var(--dorado);
-    width: 90%;
-    margin-top: 0.6rem;
-}
-
-footer section div div h1 {
-    font-size: 0.8rem;
-    font-weight: 900;
-}
-
 .links-footer {
     text-decoration: none;
-    font-size: 0.8rem;
+    font-size: 1rem;
     font-weight: 600;
     line-height: 1.65rem;
 }
@@ -881,8 +974,7 @@ footer section div div h1 {
 
 
 
-
-/************* MEDIA QUERYS *************/
+/************************************* MEDIA QUERYS *************************************/
 /* TABLETS */
 @media screen and (min-width: 651px) and (max-width: 900px) {
 
@@ -890,7 +982,6 @@ footer section div div h1 {
     #container-products {
         display: grid;
         grid-template-columns: repeat(2,1fr);
-        grid-template-rows: repeat(5,1fr);
         align-items: center;
         justify-items: center;
         text-align: center;
@@ -979,13 +1070,12 @@ footer section div div h1 {
     #container-products {
         display: grid;
         grid-template-columns: repeat(1,1fr);
-        grid-template-rows: repeat(5,1fr);
         align-items: center;
         justify-items: center;
         text-align: center;
     }
 
-    /* Panel Admin */
+    /************* Panel Admin **************/
     #div-gestion {
         padding: 1rem;
         align-content: center;
@@ -999,9 +1089,33 @@ footer section div div h1 {
     }
 
     #textos-featured {
+        text-align: center;
         padding-bottom: 0rem;
         padding-top: 0rem;
+        margin: 1rem;
     }
+    /************** Fin de Panel Admin **************/
+
+
+    /************* Página Gestión de stock **************/
+    #div-gestion-stock {
+        padding: 2rem;
+        flex-direction: column;
+    }
+    /************** Fin de Página Gestión de stock **************/
+
+
+    /****************** SHOPPING CART ******************/
+
+    .cart {
+        display: flex;
+        margin: 1rem 1rem;
+        flex-direction: column;
+    }
+
+    /************** Fin de SHOPPING CART **************/
+
+
 
     /* FOOTER */
     #contenedor-footer {

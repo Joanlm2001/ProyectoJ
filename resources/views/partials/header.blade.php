@@ -25,7 +25,7 @@
 
             <section id="div-logo"><!--Logo-->
                 <a href="#">
-                    <img id="logo" src="/PROJJJECT/img/logotipo-color.png" alt="Logotipo de Projjject">
+                    <img id="logo" src={{ asset("../img/logotipo-color.png") }} alt="Logotipo de Projjject">
                 </a>
             </section>
 
@@ -33,10 +33,9 @@
                 <ul id="iconos-resp">
                     <li class="fa fa-search iconos-acceso-estilo" ><!--Search-->
                         <form action="" autocomplete="on">
-                        <input id="search" name="search" type="text" placeholder="Buscar...">
-                        <input id="search_submit" value="Buscar" type="submit">
+                        <input class="buscador" id="search" name="search" type="text" placeholder="Buscar...">
+                        <input class="buscador-boton" id="search_submit" value="Buscar" type="submit">
                         </form>
-                        <!-- <a class="fa fa-search iconos-acceso-estilo" href="#"></a> -->
                     </li>
                     <li><!--User-->
                         <a class="fa fa-user iconos-acceso-estilo" href="#"></a>

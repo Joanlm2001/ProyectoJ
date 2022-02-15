@@ -1,5 +1,5 @@
 @extends('layouts.layout')
-@section('cuerpo')
+@section('content')
 <script type="text/javascript" src="{!! asset('js/productos.js') !!}" defer></script>
 Categoria: <h1 class="categoria">{{$category->name}}</h1>
 <br><br>
@@ -9,3 +9,5 @@ Categoria: <h1 class="categoria">{{$category->name}}</h1>
 
     </div>
 </section>
+
+@endsection
