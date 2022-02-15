@@ -28,16 +28,17 @@ Route::get('/user/admin', function () {
     if (Auth::user()->rol === 'admin') {
         return view('/user/admin/index');
     } else {
-        redirect()->route('/user');
+        redirect()->route('register');
     }
 })->middleware(['auth:sanctum', 'verified']);
 
-Route::get('/user/admin', function(){
-    return view('/user/admin/index');
-});
 
 Route::get('/user/admin/stock', function(){
-    return view('/user/admin/gestStock');
+    if (Auth::user()->rol==='admin') {
+        return view('/user/admin/gestStock');
+    }else{
+        redirect()->route('register');
+    }
 })->name('Stock');
 
 Route::get('/user/admin/users', function(){
@@ -48,16 +49,25 @@ Route::get('/user/admin/products', function(){
     return view('/user/admin/editProducts');
 })->name('Productos');
 
-
+//Ruta del cliente
 Route::get('/user/client', function () {
     if (Auth::user()->rol === 'cliente') {
-        return view('clientProfile');
+        return view('client');
     } else {
-        redirect()->route('/user');
+        redirect()->route('welcome');
     }
 })->middleware(['auth:sanctum', 'verified']);
 
-//La que veras en casso de que no lo estes
+
+//Ruta del carrito
+
+Route::get('/carrito', function(){
+    if (Auth::user()->rol==='cliente') {
+        return view('carrito');
+    }else{
+        return view('welcome');
+    }
+});
 
 //Ruta para la pagina de los usuarios
 Route::resource('/cuenta', UserController::class)->parameters(['cuenta' => 'user'])->middleware(['auth']);
