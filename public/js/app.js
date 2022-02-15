@@ -5480,6 +5480,52 @@ __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
 
 window.Alpine = alpinejs__WEBPACK_IMPORTED_MODULE_0__["default"];
 alpinejs__WEBPACK_IMPORTED_MODULE_0__["default"].start();
+/* ------------------------------------------------------------------------------- */
+
+/* Función ScrollTop */
+
+var mybutton = document.querySelector("#scroll-top");
+
+window.onscroll = function () {
+  scrollFunction();
+};
+
+function scrollFunction() {
+  if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 750) {
+    mybutton.style.display = "block";
+  } else {
+    mybutton.style.display = "none";
+  }
+}
+
+function topFunction() {
+  document.body.scrollTop = 0;
+  document.documentElement.scrollTop = 0;
+}
+/* Función Slider */
+
+
+var slideIndex = 0;
+carousel();
+
+function carousel() {
+  var i;
+  var x = document.querySelector(".mySlides");
+
+  for (i = 0; i < x.length; i++) {
+    x[i].style.display = "none";
+  }
+
+  slideIndex++;
+
+  if (slideIndex > x.length) {
+    slideIndex = 1;
+  }
+
+  x[slideIndex - 1].style.display = "block";
+  setTimeout(carousel, 5000);
+}
+/* --------------------------------------------------------------------------------------------- */
 
 /***/ }),
 

@@ -2,20 +2,16 @@
 
 const d = document;
 
+<<<<<<< HEAD
 let categoria = document.querySelector('.categoria');
+=======
+let categoria = d.querySelector('.categoria');
+let categoriaProducto = categoria.textContent;
+>>>>>>> b2d937c9bad9eeb6f87ed4559b589c3e6c9dbc72
 categoria.textContent = categoria.textContent.toLocaleUpperCase();
 let divContainer = document.querySelector('#container-products');
 
-let cat = 0;
-if(categoria.textContent === 'MUEBLES'){
-    cat = 1;
-}else if(categoria.textContent === 'ESPEJOS'){
-    cat = 2;
-}else if(categoria.textContent === 'ACCESORIOS'){
-    cat = 3;
-}else if(categoria.textContent === 'PATAS'){
-    cat = 4;
-}
+
 
 
 /* LEER PETICION API REST */
@@ -27,7 +23,7 @@ const getAll = async () => {
         json = await res.json();
         console.log(json);
         json.forEach((productos)=>{
-            if(productos.category === cat){
+            if(productos.category === categoriaProducto){
 
                 let article = d.createElement('article');
                 let divImg = d.createElement('div');
@@ -46,8 +42,8 @@ const getAll = async () => {
                 /* ---------------------------------------- */
                 /* AÑADIR DATOS A LOS CAMPOSS */
                 linkH1.textContent = productos.name;
-                descripcion.textContent = "aqui irá la desc del producto";
-                precio.textContent = productos.price;
+                descripcion.textContent = productos.description;
+                precio.textContent = `${productos.price} €`;
                 boton.textContent = "Añadir al carrito";
                 /* AÑADIMOS LAS CLASES*/
                 linkImg.className = "products";
