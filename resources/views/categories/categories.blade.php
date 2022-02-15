@@ -8,4 +8,4 @@ Categoria: <a href= "{{route('categorias.show', $category->id)}}">{{$category->n
 @endforelse
 
 <h1 class="categoria"></h1>
-
+@endsection
