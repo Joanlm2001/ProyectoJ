@@ -278,6 +278,10 @@ header section div ul {
     color: var(--azulOscuro);
 }
 
+#iconos-resp {
+    margin: 1rem 0;
+}
+
 .count {
     width: 1.2rem;
     height: 1.2rem;
@@ -528,7 +532,7 @@ body header nav > ul > li{
     display: flex;
     align-items: center;
     justify-content: flex-end;
-    background-image: url(img/nordico.jpg);
+    background-image: url(../img/nordico.jpg);
     background-position-y: center;
     height: 30rem;
     background-size: cover;
@@ -581,7 +585,7 @@ body header nav > ul > li{
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: flex-start;
-    background-image: url(img/boho.jpg);
+    background-image: url(../img/boho.jpg);
     background-position-y: center;
     height: 30rem;
     background-size: cover;
@@ -628,7 +632,7 @@ body header nav > ul > li{
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: flex-start;
-    background-image: url(img/industrial.jpg);
+    background-image: url(../img/industrial.jpg);
     background-position-y: center;
     height: 30rem;
     background-size: cover;
@@ -680,7 +684,7 @@ body header nav > ul > li{
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: flex-start;
-    background-image: url(img/glamour.jpg);
+    background-image: url(../img/glamour.jpg);
     background-position-y: top;
     height: 30rem;
     background-size: cover;
@@ -724,18 +728,17 @@ body header nav > ul > li{
 /******************* PRODUCTOS *******************/
 #container-products img {
     width: 100%;
-    padding: 4rem;
-    padding: 1rem 0;
+    padding: 3rem;
 }
 
 #textos-featured {
-    font-size: 2rem;
+    font-size: 4rem;
     letter-spacing: 0.4rem;
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding-bottom: 2rem;
-    padding-top: 4rem;
+    padding-top: 3rem;
+    font-weight: bold;
     font-family: 'Domine';
 }
 
@@ -771,6 +774,10 @@ body header nav > ul > li{
 }
 .nombre-producto:hover {
     color: var(--dorado);
+}
+
+.descripcion-producto {
+    margin: 2rem;
 }
 
 .precio-producto {
@@ -883,10 +890,6 @@ body header nav > ul > li{
 
 .icono-textos-footer img {
     height: 3rem;
-}
-
-.icono-textos-footer div p {
-    line-height: 0.5rem;
 }
 
 .link {
@@ -1035,6 +1038,7 @@ body header nav > ul > li{
     .flex-container {
         flex-direction: column;
         justify-content: center;
+        padding-bottom: 1rem;
     }
 
 
@@ -1075,6 +1079,7 @@ body header nav > ul > li{
         text-align: center;
     }
 
+
     /************* Panel Admin **************/
     #div-gestion {
         padding: 1rem;
@@ -1090,9 +1095,9 @@ body header nav > ul > li{
 
     #textos-featured {
         text-align: center;
-        padding-bottom: 0rem;
-        padding-top: 0rem;
+        padding: 0rem 1rem;
         margin: 1rem;
+        font-size: 3rem;
     }
     /************** Fin de Panel Admin **************/
 
