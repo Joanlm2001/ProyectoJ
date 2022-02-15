@@ -1,3 +1,5 @@
+@extends('layouts.layout')
+
 @section('cuerpo')
 @forelse ($categories as $category)
 Categoria: <a href= "{{route('categorias.show', $category->id)}}">{{$category->name}}</a>
@@ -5,6 +7,3 @@ Categoria: <a href= "{{route('categorias.show', $category->id)}}">{{$category->n
 @empty
 
 @endforelse
-
-<h1 class="categoria"></h1>
-
