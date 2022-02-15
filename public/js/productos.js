@@ -47,13 +47,14 @@ const getAll = async () => {
                 linkH1.className = 'nombre-producto';
                 descripcion.className = 'descripcion-producto';
                 precio.className = 'precio-producto';
+                boton.className = 'boton-ver-producto';
                 /*AÑADIR SRC/ALT/ENLACES ECT*/
                 linkImg.href = '#';
                 img.title = 'Ver producto'
                 img.alt = `Foto de ${productos.name}`;
-                img.src = '#';
+                img.src = `../img/${categoriaProducto}/${productos.image}.webp`;
                 linkH1.href = '#';
-                boton.src = '#'
+                boton.href = '#';
                 /* AÑADIMOS TODO A LA PÁGINA */
                 divImg.append(linkImg);
                 linkImg.append(img);
