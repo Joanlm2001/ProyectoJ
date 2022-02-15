@@ -2,9 +2,9 @@
 
 const d = document;
 
-let categoria = d.querySelector('.categoria');
+let categoria = document.querySelector('.categoria');
 categoria.textContent = categoria.textContent.toLocaleUpperCase();
-let divContainer = d.querySelector('#container-products');
+let divContainer = document.querySelector('#container-products');
 
 let cat = 0;
 if(categoria.textContent === 'MUEBLES'){
@@ -72,7 +72,7 @@ const getAll = async () => {
             }
         });
     }catch(err){
-
+        console.log("No va");
     }
 }
 

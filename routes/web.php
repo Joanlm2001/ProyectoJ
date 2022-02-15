@@ -32,17 +32,21 @@ Route::get('/user/admin', function () {
     }
 })->middleware(['auth:sanctum', 'verified']);
 
-Route::get('/user/admin/editProducts', function () {
-    if(!is_object(Auth::user())){
-        echo "No es un objeto";
-        return;
-    }
-    if (Auth::user()->rol === 'admin') {
-        return view('user/admin/editProducts');
-    } else {
-        redirect()->route('/user');
-    }
+Route::get('/user/admin', function(){
+    return view('/user/admin/index');
 });
+
+Route::get('/user/admin/stock', function(){
+    return view('/user/admin/gestStock');
+})->name('Stock');
+
+Route::get('/user/admin/users', function(){
+    return view('/user/admin/gestUsers');
+})->name('Usuarios');
+
+Route::get('/user/admin/products', function(){
+    return view('/user/admin/editProducts');
+})->name('Productos');
 
 
 Route::get('/user/client', function () {
@@ -69,3 +73,5 @@ Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
 
     return view('dashboard');
 })->name('dashboard');
+
+//
