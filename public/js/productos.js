@@ -2,10 +2,14 @@
 
 const d = document;
 
+<<<<<<< HEAD
+let categoria = document.querySelector('.categoria');
+=======
 let categoria = d.querySelector('.categoria');
 let categoriaProducto = categoria.textContent;
+>>>>>>> b2d937c9bad9eeb6f87ed4559b589c3e6c9dbc72
 categoria.textContent = categoria.textContent.toLocaleUpperCase();
-let divContainer = d.querySelector('#container-products');
+let divContainer = document.querySelector('#container-products');
 
 
 
@@ -65,7 +69,7 @@ const getAll = async () => {
             }
         });
     }catch(err){
-
+        console.log("No va");
     }
 }
 
