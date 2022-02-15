@@ -1045,6 +1045,9 @@ select {
 .inline-flex {
   display: inline-flex;
 }
+.table {
+  display: table;
+}
 .grid {
   display: grid;
 }
@@ -1297,6 +1300,9 @@ select {
 .border-b {
   border-bottom-width: 1px;
 }
+.border-r {
+  border-right-width: 1px;
+}
 .border-gray-300 {
   --tw-border-opacity: 1;
   border-color: rgb(209 213 219 / var(--tw-border-opacity));
@@ -1315,6 +1321,10 @@ select {
 .border-gray-100 {
   --tw-border-opacity: 1;
   border-color: rgb(243 244 246 / var(--tw-border-opacity));
+}
+.border-gray-400 {
+  --tw-border-opacity: 1;
+  border-color: rgb(156 163 175 / var(--tw-border-opacity));
 }
 .bg-white {
   --tw-bg-opacity: 1;
@@ -1537,6 +1547,9 @@ select {
 }
 .tracking-widest {
   letter-spacing: 0.1em;
+}
+.tracking-wider {
+  letter-spacing: 0.05em;
 }
 .text-gray-500 {
   --tw-text-opacity: 1;
@@ -1761,7 +1774,7 @@ a:link{
 #scroll-top:hover {
     background-color: #555;
 }
-/******************** HEADER **********************/
+/*********************************************************** HEADER *************************************************************/
 /* MENÚ STICKY */
 #menu-sticky {
     overflow: hidden;
@@ -1775,22 +1788,22 @@ a:link{
 .sticky + main {
     padding-top: 15%;
 }
-/********* HAMBURGER ********/
+/************************* HAMBURGER ************************/
 #menu__toggle {
     opacity: 0;
   }
-#menu_toggle:checked + .menu_btn > span {
+#menu__toggle:checked + .menu__btn > span {
     transform: rotate(45deg);
   }
-#menu_toggle:checked + .menu_btn > span::before {
+#menu__toggle:checked + .menu__btn > span::before {
     top: 0;
     transform: rotate(0deg);
   }
-#menu_toggle:checked + .menu_btn > span::after {
+#menu__toggle:checked + .menu__btn > span::after {
     top: 0;
     transform: rotate(90deg);
   }
-#menu_toggle:checked ~ .menu_box {
+#menu__toggle:checked ~ .menu__box {
     left: 0 !important;
   }
 .menu__btn {
@@ -1845,7 +1858,7 @@ a:link{
 .menu__item:hover {
     background-color: #CFD8DC;
 }
-/******* FIN HAMBURGER *******/
+/******************* FIN HAMBURGER *********************/
 /* LOGOTIPO  */
 #div-logo {
     display: flex;
@@ -1869,7 +1882,7 @@ a:link{
     z-index: 1;
     height: 50px;
 }
-/********** FIN LOGOTIPO *********/
+/***************************** FIN LOGOTIPO **************************/
 .flex-container {
     display: flex;
     flex-direction: row;
@@ -1939,6 +1952,9 @@ header section div ul {
     padding-right: 1rem;
     color: var(--azulOscuro);
 }
+#iconos-resp {
+    margin: 1rem 0;
+}
 .count {
     width: 1.2rem;
     height: 1.2rem;
@@ -1969,8 +1985,8 @@ body header nav > ul > li{
     text-decoration: none;
     padding: 0 1rem;
 }
-/******** Buscador *******/
-input[type="text"] {
+/*********************** Buscador ******************/
+.buscador {
     background-color: white;
     font-size: 1rem;
     display: inline-block;
@@ -1988,10 +2004,10 @@ input[type="text"] {
     transition: width .4s cubic-bezier(0.000, 0.795, 0.000, 1.000);
     cursor: pointer;
 }
-input[type="text"]:focus:hover {
+.buscador:focus:hover {
     border-bottom: 1px solid var(--dorado);
 }
-input[type="text"]:focus {
+.buscador:focus {
     width: -webkit-fit-content;
     width: -moz-fit-content;
     width: fit-content;
@@ -1999,7 +2015,7 @@ input[type="text"]:focus {
     border-bottom: 1px solid var(--dorado);
     cursor: text;
 }
-input[type="submit"] {
+.buscador-boton {
     display: inline-block;
     border: none;
     position: absolute;
@@ -2009,11 +2025,11 @@ input[type="submit"] {
     opacity: 1;
     transition: opacity .4s ease;
 }
-input[type="submit"]:hover {
+.buscador-boton:hover {
     opacity: 0.8;
 }
 /* Fin de Buscador */
-/***** PÁGINA ADMIN ****/
+/************* PÁGINA ADMIN ************/
 .flex-container-admin {
     display: flex;
     justify-content: center;
@@ -2040,9 +2056,93 @@ input[type="submit"]:hover {
     transform: scale(1.05);
     color: var(--azulOscuro);
 }
-/* Fin de botón Ver más */
-/********************* MAIN ************************/
-/****** SLIDER ********/
+/********** Fin de PÁGINA ADMIN **********/
+/************* PÁGINA GESTIÓN STOCK ************/
+#div-gestion-stock {
+    display: flex;
+    justify-content: center;
+    padding: 4rem;
+}
+.botones-gestion-stock {
+    font-size: 1rem;
+    font-family: var(--texto);
+    font-weight: bold;
+    text-transform: uppercase;
+    margin: 1rem;
+    padding: 1rem 2rem;
+    border: 2px solid var(--azulOscuro);
+    color: var(--azulOscuro);
+    border-radius: 0.3rem;
+    transition: 100ms cubic-bezier(0.77, 0, 0.175, 1);
+}
+.botones-gestion-stock:hover {
+    transform: scale(1.05);
+}
+/********** Fin de GESTIÓN STOCK **********/
+/****************** SHOPPING CART ******************/
+#subtitulo {
+    font-size: 1rem;
+    font-family: var(--texto);
+    letter-spacing: 0;
+    border: 2px solid;
+    padding: 0.5rem 1rem;
+    color: var(--dorado);
+}
+.cart {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    border: 2px solid;
+    margin: 1rem 10rem;
+}
+.cart img {
+    width: 30%;
+    margin: 1rem;
+}
+.precio-cart {
+    color: var(--azulClaro);
+    font-weight: bold;
+    font-size: 1.5rem;
+    border-top: 2px solid;
+    border-bottom: 2px solid;
+    width: 90%;
+    text-align: center;
+}
+#boton-comprar {
+    display: flex;
+    justify-content: center;
+    padding: 2rem;
+}
+#boton-comprar button {
+    text-transform: uppercase;
+    font-family: var(--texto);
+    font-size: 1rem;
+    letter-spacing: 0.1rem;
+    padding: 1.8rem;
+    color: var(--blanco);
+    background-color: var(--azulOscuro);
+    border-radius: 0.3rem;
+    transition: 100ms cubic-bezier(0.77, 0, 0.175, 1);
+}
+#boton-comprar button:hover {
+    transform: scale(1.05);
+}
+.cart button {
+   /*  background-color: rgba(216, 92, 92, 0.972); */
+   background-color: var(--gris);
+    color: var(--azulOscuro);
+    font-family: var(--texto);
+    font-weight: bold;
+    text-transform: uppercase;
+    padding: 0.5rem;
+    transition: 100ms cubic-bezier(0.77, 0, 0.175, 1);
+}
+.cart button:hover {
+    transform: scale(1.05);
+}
+/************** Fin de SHOPPING CART **************/
+/************************************************************** MAIN *********************************************************************/
+/****************** SLIDER ********************/
 /* Animación Slider */
 .fade {
     animation-name: fade;
@@ -2262,24 +2362,24 @@ input[type="submit"]:hover {
     transform: scale(1.05);
     transition-timing-function: ease-in;
 }
-/******* PRODUCTOS *******/
+/******************* PRODUCTOS *******************/
 #container-products img {
     width: 100%;
+    padding: 3rem;
 }
 #textos-featured {
-    font-size: 2rem;
+    font-size: 4rem;
     letter-spacing: 0.4rem;
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding-bottom: 2rem;
-    padding-top: 4rem;
+    padding-top: 3rem;
+    font-weight: bold;
     font-family: 'Domine';
 }
 #container-products {
     display: grid;
     grid-template-columns: repeat(3,1fr);
-    grid-template-rows: repeat(5,1fr);
     align-items: center;
     justify-items: center;
     text-align: center;
@@ -2305,6 +2405,9 @@ input[type="submit"]:hover {
 }
 .nombre-producto:hover {
     color: var(--dorado);
+}
+.descripcion-producto {
+    margin: 2rem;
 }
 .precio-producto {
     color: var(--azulClaro);
@@ -2344,7 +2447,7 @@ input[type="submit"]:hover {
     padding: 3rem 0;
 }
 /* Botón Ver más */
-#boton-ver-mas a {
+#boton-ver-mas button {
     text-align: center;
     text-decoration: none;
     text-transform: uppercase;
@@ -2356,11 +2459,11 @@ input[type="submit"]:hover {
     border-radius: 0.3rem;
     transition: 100ms cubic-bezier(0.77, 0, 0.175, 1);
 }
-#boton-ver-mas a:hover {
+#boton-ver-mas button:hover {
     transform: scale(1.05);
 }
 /* Fin de botón Ver más */
-/********************* FOOTER ************************/
+/************************************************************** FOOTER *********************************************************************/
 #contenedor-footer {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -2376,7 +2479,7 @@ input[type="submit"]:hover {
 }
 .li-footer {
     text-decoration: none;
-    font-size: 0.8rem;
+    font-size: 1rem;
     color: rgb(118, 118, 118);
     font-weight: 600;
     line-height: 1.6rem;
@@ -2384,18 +2487,9 @@ input[type="submit"]:hover {
 .li-footer:hover {
     color: var(--dorado);
 }
-.li-footer-info {
-    border-right: 2px solid var(--dorado);
-    width: 90%;
-    margin-top: 0.6rem;
-}
-footer section div div h1 {
-    font-size: 0.8rem;
-    font-weight: 900;
-}
 .links-footer {
     text-decoration: none;
-    font-size: 0.8rem;
+    font-size: 1rem;
     font-weight: 600;
     line-height: 1.65rem;
 }
@@ -2405,9 +2499,6 @@ footer section div div h1 {
 }
 .icono-textos-footer img {
     height: 3rem;
-}
-.icono-textos-footer div p {
-    line-height: 0.5rem;
 }
 .link {
     text-decoration: none;
@@ -2478,7 +2569,7 @@ footer section div div h1 {
     justify-content: flex-end;
     align-items: center;
 }
-/************* MEDIA QUERYS *************/
+/************************************* MEDIA QUERYS *************************************/
 /* TABLETS */
 @media screen and (min-width: 651px) and (max-width: 900px) {
 
@@ -2486,7 +2577,6 @@ footer section div div h1 {
     #container-products {
         display: grid;
         grid-template-columns: repeat(2,1fr);
-        grid-template-rows: repeat(5,1fr);
         align-items: center;
         justify-items: center;
         text-align: center;
@@ -2539,6 +2629,7 @@ footer section div div h1 {
     .flex-container {
         flex-direction: column;
         justify-content: center;
+        padding-bottom: 1rem;
     }
 
 
@@ -2574,13 +2665,13 @@ footer section div div h1 {
     #container-products {
         display: grid;
         grid-template-columns: repeat(1,1fr);
-        grid-template-rows: repeat(5,1fr);
         align-items: center;
         justify-items: center;
         text-align: center;
     }
 
-    /* Panel Admin */
+
+    /************* Panel Admin **************/
     #div-gestion {
         padding: 1rem;
         align-content: center;
@@ -2594,9 +2685,33 @@ footer section div div h1 {
     }
 
     #textos-featured {
-        padding-bottom: 0rem;
-        padding-top: 0rem;
+        text-align: center;
+        padding: 0rem 1rem;
+        margin: 1rem;
+        font-size: 3rem;
     }
+    /************** Fin de Panel Admin **************/
+
+
+    /************* Página Gestión de stock **************/
+    #div-gestion-stock {
+        padding: 2rem;
+        flex-direction: column;
+    }
+    /************** Fin de Página Gestión de stock **************/
+
+
+    /****************** SHOPPING CART ******************/
+
+    .cart {
+        display: flex;
+        margin: 1rem 1rem;
+        flex-direction: column;
+    }
+
+    /************** Fin de SHOPPING CART **************/
+
+
 
     /* FOOTER */
     #contenedor-footer {
@@ -2636,6 +2751,9 @@ footer section div div h1 {
         font-size: 1.5rem;
     }
 
+}
+.categoria{
+    margin-bottom: 50px;
 }
 .hover\:border-gray-300:hover {
   --tw-border-opacity: 1;
