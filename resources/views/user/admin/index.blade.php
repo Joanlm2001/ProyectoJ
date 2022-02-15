@@ -1,14 +1,9 @@
-<<<<<<< HEAD
-<h1>Estas en la vista del admin</h1>
-<a href="{{route('Productos')}}">Editar Productos</a>
-<a href="{{route('Usuarios')}}">Gestionar Usuarios</a>
-<a href="{{route('Stock')}}">Gestionar Stock</a>
-=======
+
 {{-- <h1>Estas en la vista del admin</h1>
 <a href="{{route('Stock')}}">Editar Productos</a>
 <a href="{{route('Usuarios')}}">Gestionar Usuarios</a>
 <a href="{{route('Productos')}}">Gestionar Stock</a> --}}
->>>>>>> 27407fff2bbaa055bd7aa95b5d380d68a61076c3
+
 
 @extends('layouts.layout')
 
