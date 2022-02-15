@@ -22,8 +22,10 @@ return new class extends Migration
             $table->string('avatar');
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
+            $table->string('adress');
             $table->rememberToken();
             $table->foreignId('current_team_id')->nullable();
+            $table->foreignId('adress_id')->nullable();
             $table->string('profile_photo_path', 2048)->nullable();
             $table->timestamps();
         });

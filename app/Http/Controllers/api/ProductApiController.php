@@ -36,14 +36,57 @@ class ProductApiController extends Controller
      * @return \Illuminate\Http\Response
      */
 
+
     public function store(Request $request)
     {
+        function validarName(Request $request, Product $product)
+        {
+            $nombreProducto = $request->name;
+            if ($nombreProducto === '' || $nombreProducto == null || is_numeric($nombreProducto)) {
+                return "El nombre no es correcto";
+            } else {
+                $product->name = $nombreProducto;
+            }
+        }
+
+        function validarPrecio(Request $request, Product $product)
+        {
+            $precioProducto = $request->price;
+            if (is_float($precioProducto)) {
+                $product->name = $precioProducto;
+            } else {
+                return "El precio no es valido";
+            }
+        }
+
+        function validarTasa(Request $request, Product $product)
+        {
+            $tasaProducto = $request->taxe;
+            if (is_int($tasaProducto)) {
+                $product->taxe = $tasaProducto;
+            } else {
+                return "La tasa ha de ser un numero";
+            }
+        }
+
+        function validarDescuento(Request $request, Product $product)
+        {
+            $descuentoProducto = $request->discount;
+            if (is_int($descuentoProducto)) {
+                $product->discount = $descuentoProducto;
+            } else {
+                return "El descuento ha de ser un numero";
+            }
+        }
+
+        function validarDisponible(Request $request, Product $product){
+            $disponible=$request->disponible;
+            if ($disponible === 1 || $disponible === 0) {
+                
+            }
+        }
         $product = new Product();
-        $product->name = $request->name;
-        $product->price = $request->price;
         $product->disponible = $request->disponible;
-        $product->taxe = $request->taxe;
-        $product->discount = $request->discount;
         $product->image = $request->image;
         $product->category = $request->category;
 
@@ -82,43 +125,11 @@ class ProductApiController extends Controller
      * @return \Illuminate\Http\Response
      */
 
-    public function validarName(Request $request, Product $product)
-    {
-        $nombreProducto = $request->name;
-        if ($nombreProducto === '' || $nombreProducto == null || is_numeric($nombreProducto)) {
-            return "El nombre no es correcto";
-        } else {
-            $product->name = $nombreProducto;
-        }
-    }
 
-    public function validarPrecio(Request $request, Product $product)
-    {
-        $precioProducto = $request->price;
-        if(is_float($precioProducto)){
-            $product->name=$precioProducto;
-        }else{
-            return "El precio no es valido";
-        }
-    }
 
-    public function validarTasa(Request $request, Product $product){
-        $tasaProducto= $request->taxe;
-        if(is_int($tasaProducto)){
-            $product->taxe=$tasaProducto;
-        }else{
-            return "La tasa ha de ser un numero";
-        }
-    }
-     public function validarDescuento(Request $request, Product $product){
-        $descuentoProducto= $request->discount;
-        if(is_int($descuentoProducto)){
-            $product->discount=$descuentoProducto;
-        }else{
-            return "El descuento ha de ser un numero";
-        }
-    }
-        
+
+
+
     public function update(Request $request, Product $product)
     {
         $product = new Product();

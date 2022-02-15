@@ -33,19 +33,19 @@ Route::get('/user/admin', function () {
 })/* ->middleware(['auth:sanctum', 'verified']) */;
 
 
-Route::get('/user/admin/stock', function(){
-    if (Auth::user()->rol==='admin') {
+Route::get('/user/admin/stock', function () {
+    if (Auth::user()->rol === 'admin') {
         return view('/user/admin/gestStock');
-    }else{
+    } else {
         redirect()->route('register');
     }
 })->name('Stock');
 
-Route::get('/user/admin/users', function(){
+Route::get('/user/admin/users', function () {
     return view('/user/admin/gestUsers');
 })->name('Usuarios');
 
-Route::get('/user/admin/products', function(){
+Route::get('/user/admin/products', function () {
     return view('/user/admin/editProducts');
 })->name('Productos');
 
@@ -61,12 +61,8 @@ Route::get('/user/client', function () {
 
 //Ruta del carrito
 
-Route::get('/carrito', function(){
-    if (Auth::user()->rol==='cliente') {
-        return view('carrito');
-    }else{
-        return view('welcome');
-    }
+Route::get('/carrito', function () {
+    return view('carrito');
 });
 
 //Ruta para la pagina de los usuarios
@@ -79,9 +75,17 @@ Route::resource('/productos', ProductController::class)->parameters(["productos"
 //Ruta para las categorias
 Route::resource('/categorias', CategoryController::class)->parameters((['categorias' => 'category']));
 
-Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
+//Ruta para los estilos
 
+Route::get('/estilos', function () {
+    return view('/styles/index');
+});
+
+Route::get('/estilos/productos', function () {
+    return view('/styles/show');
+});
+
+
+Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return view('dashboard');
 })->name('dashboard');
-
-//
