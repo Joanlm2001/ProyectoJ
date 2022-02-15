@@ -28,7 +28,6 @@
                     <div>
                         <section class="icono-textos-footer">
                             <div>
-                                <p class="links-footer">+34 616 123 789</p>
                                 <p class="links-footer">+34 961 539 999</p>
                             </div>
                         </section>
@@ -37,7 +36,7 @@
             </div>
             <div id="logo-footer">
                 <a href="#">
-                    <img src="/PROJJJECT/img/isotipo-azul-oscuro.png" alt="Isotipo de Projjject">
+                    <img src={{ asset("../img/isotipo-azul-oscuro.png") }} alt="Isotipo de Projjject">
                 </a>
             </div>
         </div>
