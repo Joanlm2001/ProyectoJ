@@ -2,7 +2,6 @@
 
 const d = document;
 
-let categoria = document.querySelector('.categoria');
 let categoria = d.querySelector('.categoria');
 let categoriaProducto = categoria.textContent;
 categoria.textContent = categoria.textContent.toLocaleUpperCase();
