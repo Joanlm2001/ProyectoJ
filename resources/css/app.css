@@ -259,7 +259,6 @@ header section div ul {
 #iconos-acceso {
     display: flex;
     list-style: none;
-    padding: 1rem 0;
 }
 
 #iconos-acceso ul li{
@@ -726,6 +725,7 @@ body header nav > ul > li{
 #container-products img {
     width: 100%;
     padding: 4rem;
+    padding: 1rem 0;
 }
 
 #textos-featured {
@@ -821,7 +821,7 @@ body header nav > ul > li{
 
 
 /* Botón Ver más */
-#boton-ver-mas a {
+#boton-ver-mas button {
     text-align: center;
     text-decoration: none;
     text-transform: uppercase;
@@ -834,7 +834,7 @@ body header nav > ul > li{
     transition: 100ms cubic-bezier(0.77, 0, 0.175, 1);
 }
 
-#boton-ver-mas a:hover {
+#boton-ver-mas button:hover {
     transform: scale(1.05);
 }
 /* Fin de botón Ver más */

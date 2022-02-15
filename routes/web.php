@@ -25,12 +25,12 @@ Route::get('/', function () {
 
 //Rutas del admin
 Route::get('/user/admin', function () {
-    if (Auth::user()->rol === 'admin') {
+   /*  if (Auth::user()->rol === 'admin') { */
         return view('/user/admin/index');
-    } else {
+    /* } else {
         redirect()->route('register');
-    }
-})->middleware(['auth:sanctum', 'verified']);
+    } */
+})/* ->middleware(['auth:sanctum', 'verified']) */;
 
 
 Route::get('/user/admin/stock', function(){
