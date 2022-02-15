@@ -3,19 +3,11 @@
 const d = document;
 
 let categoria = d.querySelector('.categoria');
+let categoriaProducto = categoria.textContent;
 categoria.textContent = categoria.textContent.toLocaleUpperCase();
 let divContainer = d.querySelector('#container-products');
 
-let cat = 0;
-if(categoria.textContent === 'MUEBLES'){
-    cat = 1;
-}else if(categoria.textContent === 'ESPEJOS'){
-    cat = 2;
-}else if(categoria.textContent === 'ACCESORIOS'){
-    cat = 3;
-}else if(categoria.textContent === 'PATAS'){
-    cat = 4;
-}
+
 
 
 /* LEER PETICION API REST */
@@ -27,7 +19,7 @@ const getAll = async () => {
         json = await res.json();
         console.log(json);
         json.forEach((productos)=>{
-            if(productos.category === cat){
+            if(productos.category === categoriaProducto){
 
                 let article = d.createElement('article');
                 let divImg = d.createElement('div');
