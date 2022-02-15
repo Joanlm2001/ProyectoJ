@@ -3,7 +3,7 @@
         <div class="flex-container">
             <section class="hamburger-menu"> <!-- Menu Hamburger -->
                     <input id="menu__toggle" type="checkbox"/>
-                    <label class="menu_btn" for="menu_toggle">
+                    <label class="menu__btn" for="menu__toggle">
                         <span></span>
                     </label>
 
@@ -25,8 +25,7 @@
 
             <section id="div-logo"><!--Logo-->
                 <a href="#">
-                    <img id="logo" src="../../public/img/logotipo-color.png" alt="Logotipo de Projjject">
-                    <!-- <img class="logo-top" src="/PROJJJECT/img/isotipo-azul-oscuro.png" alt="Isotipo de Projjject"> -->
+                    <img id="logo" src="/PROJJJECT/img/logotipo-color.png" alt="Logotipo de Projjject">
                 </a>
             </section>
 
