@@ -38,7 +38,7 @@ const getAll = async () => {
                 /* ---------------------------------------- */
                 /* AÑADIR DATOS A LOS CAMPOSS */
                 linkH1.textContent = productos.name;
-                descripcion.textContent = "aqui irá la desc del producto";
+                descripcion.textContent = productos.description;
                 precio.textContent = productos.price;
                 boton.textContent = "Añadir al carrito";
                 /* AÑADIMOS LAS CLASES*/
