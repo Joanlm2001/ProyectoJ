@@ -65,7 +65,8 @@ const getAll = async () => {
             }
         });
     }catch(err){
-        console.log("No va");
+        let message = err.statusText || "Ocurrio un error";
+        divContainer.insertAdjacentHTML("afterend",`<p><b>Error ${err.status}: ${message} </b></p>`);
     }
 }
 
