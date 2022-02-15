@@ -13,18 +13,19 @@ let divBotonVerMas = d.querySelector('#boton-ver-mas');
 
 /* LEER PETICION API REST */
 
-const getAll = async () => {
+const getAll = async (seguir) => {
 
     try{
         let res = await fetch('/api/products');
         json = await res.json();
         console.log(json);
+
         json.forEach((productos)=>{
 
             if(contador === 20){
                 botonVerMas.textContent = 'VER MAS';
                 divBotonVerMas.append(botonVerMas);
-            }else{
+            }else if(productos.id >= seguir){
                 if(productos.category === categoriaProducto){
                     contador ++;
                     console.log(contador);
@@ -73,11 +74,12 @@ const getAll = async () => {
                 }
             }
         });
+        contador = 0;
 
         botonVerMas.addEventListener('click', function(e){
-            contador = 0;
+            let seguir =+ 20;
             botonVerMas.style = 'display: none';
-
+            getAll(seguir);
         });
 
     }catch(err){
@@ -86,5 +88,5 @@ const getAll = async () => {
     }
 }
 
-getAll();
+getAll(0);
 
