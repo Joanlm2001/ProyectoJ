@@ -82,6 +82,10 @@ class UserApiController extends Controller
 
     $emailValidar=$request->email; */
 
+    public function devolverIndex(User $user){
+        return view('user.admin.index', compact ('user'));
+    }
+    
     public function comprobarNombre(Request $request, User $user)
     {
         $nameValidar = $request->name;

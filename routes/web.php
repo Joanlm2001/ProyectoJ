@@ -18,26 +18,63 @@ use Illuminate\Support\Facades\Auth;
 |
 */
 
-Route::get('/', function(){
+Route::get('/', function () {
     return view('welcome');
 });
-//Solo puedes entrar en caso de que estes autorizado
+
+
+//Rutas del admin
 Route::get('/user/admin', function () {
-    return view('admin_profile');
+    if (Auth::user()->rol === 'admin') {
+        return view('/user/admin/index');
+    } else {
+        redirect()->route('register');
+    }
 })->middleware(['auth:sanctum', 'verified']);
 
-/* if(Auth::user()->rol === 'admin'){
-    return view('admin_profile');
-} */
-//La que veras en casso de que no lo estes
-Route::get('/user/admin', function () {
-    return view('index');
+
+Route::get('/user/admin/stock', function(){
+    if (Auth::user()->rol==='admin') {
+        return view('/user/admin/gestStock');
+    }else{
+        redirect()->route('register');
+    }
+})->name('Stock');
+
+Route::get('/user/admin/users', function(){
+    return view('/user/admin/gestUsers');
+})->name('Usuarios');
+
+Route::get('/user/admin/products', function(){
+    return view('/user/admin/editProducts');
+})->name('Productos');
+
+//Ruta del cliente
+Route::get('/user/client', function () {
+    if (Auth::user()->rol === 'cliente') {
+        return view('client');
+    } else {
+        redirect()->route('welcome');
+    }
+})->middleware(['auth:sanctum', 'verified']);
+
+
+//Ruta del carrito
+
+Route::get('/carrito', function(){
+    if (Auth::user()->rol==='cliente') {
+        return view('carrito');
+    }else{
+        return view('welcome');
+    }
 });
 
 //Ruta para la pagina de los usuarios
 Route::resource('/cuenta', UserController::class)->parameters(['cuenta' => 'user'])->middleware(['auth']);
 
 Route::resource('/productos', ProductController::class)->parameters(["productos" => "product"]);
+
+
 
 //Ruta para las categorias
 Route::resource('/categorias', CategoryController::class)->parameters((['categorias' => 'category']));
@@ -47,3 +84,4 @@ Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return view('dashboard');
 })->name('dashboard');
 
+//

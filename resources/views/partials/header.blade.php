@@ -26,7 +26,6 @@
             <section id="div-logo"><!--Logo-->
                 <a href="#">
                     <img id="logo" src="/PROJJJECT/img/logotipo-color.png" alt="Logotipo de Projjject">
-                    <!-- <img class="logo-top" src="/PROJJJECT/img/isotipo-azul-oscuro.png" alt="Isotipo de Projjject"> -->
                 </a>
             </section>
 
