@@ -89,11 +89,11 @@ const getAll = async (seguir) => {
     }
 }
 
-getAll(0);
+getAll(0).then()
 
 let botones = d.querySelectorAll('.boton-ver-producto');
 console.log(botones)
-for(boton in botones){
+for(let boton of botones){
 console.log(boton)
 
 }

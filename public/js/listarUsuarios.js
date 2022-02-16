@@ -44,7 +44,7 @@ const getAllUsers = async () => {
             listaEmail.append(liEmail);
             listaRol.append(liRol);
             listaDireccion.append(liDirección);
-
+            
 
         });
     }catch(err){
