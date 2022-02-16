@@ -857,6 +857,8 @@ body header nav > ul > li{
 
 #contenedor-footer h1 {
     font-size: 2rem;
+    font-weight: bold;
+    padding-bottom: 1rem;
 }
 
 .ul-footer {
@@ -1025,7 +1027,7 @@ body header nav > ul > li{
     }
 
     #footer-inferior ul li {
-        padding: 0 2.5rem;
+        padding: 1rem 1.9rem;
         font-size: 1.5rem;
     }
 
