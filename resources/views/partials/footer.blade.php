@@ -44,7 +44,7 @@
 
     <section id="footer-inferior"><!--Inferior-->
         <div><!--Copyright-->
-            <p>Copyright 2022 <a href="#"> PROJJJECT </a>All Rights Reserved.</p>
+            <p>Copyright 2022 <a href="{{route("index")}}"> PROJJJECT </a>All Rights Reserved.</p>
         </div>
         <div><!--RRSS-->
             <ul>
