@@ -39,57 +39,70 @@ class ProductApiController extends Controller
 
     public function store(Request $request)
     {
-        function validarName(Request $request, Product $product)
-        {
-            $nombreProducto = $request->name;
-            if ($nombreProducto === '' || $nombreProducto == null || is_numeric($nombreProducto)) {
-                return "El nombre no es correcto";
-            } else {
-                $product->name = $nombreProducto;
-            }
-        }
-
-        function validarPrecio(Request $request, Product $product)
-        {
-            $precioProducto = $request->price;
-            if (is_float($precioProducto)) {
-                $product->name = $precioProducto;
-            } else {
-                return "El precio no es valido";
-            }
-        }
-
-        function validarTasa(Request $request, Product $product)
-        {
-            $tasaProducto = $request->taxe;
-            if (is_int($tasaProducto)) {
-                $product->taxe = $tasaProducto;
-            } else {
-                return "La tasa ha de ser un numero";
-            }
-        }
-
-        function validarDescuento(Request $request, Product $product)
-        {
-            $descuentoProducto = $request->discount;
-            if (is_int($descuentoProducto)) {
-                $product->discount = $descuentoProducto;
-            } else {
-                return "El descuento ha de ser un numero";
-            }
-        }
-
-        function validarDisponible(Request $request, Product $product){
-            $disponible=$request->disponible;
-            if ($disponible === 1 || $disponible === 0) {
-                
-            }
-        }
         $product = new Product();
-        $product->disponible = $request->disponible;
-        $product->image = $request->image;
-        $product->category = $request->category;
 
+        $product->price = 0;
+        $product->numSell = 0;
+
+        $nombreProducto = $request->name;
+        if ($nombreProducto === '' || $nombreProducto == null || is_numeric($nombreProducto)) {
+            return "El nombre no es correcto";
+        } else {
+            $product->name = $nombreProducto;
+        }
+
+        $precioProducto = $request->price;
+        if (is_float($precioProducto) || is_integer($precioProducto)) {
+            $product->price = $precioProducto;
+        } else {
+            return "El precio no es valido";
+        }
+
+        $tasaProducto = $request->taxe;
+        if (is_int($tasaProducto)) {
+            $product->taxe = $tasaProducto;
+        } else {
+            return "La tasa ha de ser un numero";
+        }
+
+        $descuentoProducto = $request->discount;
+        if (is_int($descuentoProducto)) {
+            $product->discount = $descuentoProducto;
+        } else {
+            return "El descuento ha de ser un numero";
+        }
+
+        $categoria = $request->category;
+        $categoria = trim($categoria);
+        if ($categoria === "Muebles" || $categoria === "Patas" || $categoria === "Espejos" || $categoria === "Accesorios") {
+            $product->category = $categoria;
+        } else {
+            return "La categoria ha de ser Muebles, Patas, Espejos o Accesorios";
+        }
+
+        $estilo=$request->style;
+        if($estilo === "Nordico" || $estilo === "Industrial" || $estilo === "Boho" || $estilo === "Glamour" ){
+            $product->style=$estilo;
+        }else{
+            return "El estilo ha de ser Nordico, Industrial, Boho o Glamour";
+        }
+        $category_id = $request->category_id;
+        if($categoria === "Muebles"){
+            $category_id = 1;
+            $product->category_id = $category_id;
+        }else if($categoria === "Patas"){
+            $category_id = 2;
+            $product->category_id = $category_id;
+        }else if($categoria === "Espejos"){
+            $category_id = 3;
+            $product->category_id = $category_id;
+        }else if($categoria === "Accesorios"){
+            $category_id = 4;
+            $product->category_id = $category_id;
+        }
+
+        $product->description = $request->description;
+        $product->image = $request->image;
         $product->save();
 
         return response()->json(["nombre" => $product->name], 201);
@@ -135,7 +148,6 @@ class ProductApiController extends Controller
         $product = new Product();
         $product->name = $request->name;
         $product->price = $request->price;
-        $product->disponible = $request->disponible;
         $product->taxe = $request->taxe;
         $product->discount = $request->discount;
         $product->image = $request->image;

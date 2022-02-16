@@ -47,22 +47,32 @@ d.addEventListener('submit', async e =>{
 
     if(e.target === $form){
         e.preventDefault();
-
+        console.log(e.target.nombre.value);
+        console.log(e.target.precio.value);
         if(!e.target.id.value){
             //CREATE-POST
+            console.log(e);
             try{
+                let precioFinal = parseInt(e.target.precio.value);
                 let options = {
                     method:"POST",
                     headers:{
                         "Content-type": "application/json;charset=UTF-8"
                     },
                     body:JSON.stringify({
-                        name:e.target.name.value,
-                        price:e.target.price.value
+                        name:e.target.nombre.value,
+                        price: (precioFinal),
+                        image:e.target.nombre.value,
+                        taxe:5,
+                        discount:5,
+                        category: 'Muebles',
+                        description:'NADA',
+                        style:'Industrial'
                     })
                 };
 
                 let res = await fetch('/api/products',options);
+
                 json = await res.json();
 
                 //manipulacion del error
@@ -71,6 +81,7 @@ d.addEventListener('submit', async e =>{
                 //recargar página despues de ver si hay algun error
                 location.reload();
             }catch(err){
+                console.log(err);
                 let message = err.statusText || "Ocurrio un error";
                 $form.insertAdjacentHTML("afterend",`<p><b>Error ${err.status}: ${message} </b></p>`);
             }
