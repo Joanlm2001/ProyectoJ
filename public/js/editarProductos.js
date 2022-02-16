@@ -22,9 +22,16 @@ const getAll = async () => {
             $template.querySelector(".nombre").textContent = index.name;
             $template.querySelector(".id").textContent = index.id;
             $template.querySelector(".precio").textContent = index.price;
+            $template.querySelector(".image").textContent = index.image;
+            $template.querySelector(".taxe").textContent = index.taxe;
+            $template.querySelector(".category").textContent = index.category;
+            $template.querySelector(".description").textContent = index.description;
+            $template.querySelector(".style").textContent = index.style;
+            /* ---------------------------------------------------------- */
             $template.querySelector(".edit").dataset.id = index.id;
             $template.querySelector(".edit").dataset.nombre = index.name;
             $template.querySelector(".edit").dataset.precio = index.price;
+            /* ---------------------------------------------------------- */
             $template.querySelector(".eliminar").dataset.id = index.id;
 
             let $clone = d.importNode($template, true);
