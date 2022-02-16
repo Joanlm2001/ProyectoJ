@@ -21,8 +21,8 @@
             </div>
 
             <div>
-                <x-jet-label for="DNI" value="{{ __('dni') }}" />
-                <x-jet-input id="DNI" class="block mt-1 w-full" type="text" name="NIF_user" :value="old('dni')" required autofocus autocomplete="dni" />
+                <x-jet-label for="dni" value="{{ __('dni') }}" />
+                <x-jet-input id="dni" class="block mt-1 w-full" type="text" name="dni" :value="old('dni')" required autofocus autocomplete="dni" />
             </div>
 
             <div class="mt-4">

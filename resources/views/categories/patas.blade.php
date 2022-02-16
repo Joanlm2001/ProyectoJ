@@ -3,6 +3,4 @@
 @section('content')
 <h1 class="patas">Patas</h1>
 
-@endforelse
-
 @endsection
