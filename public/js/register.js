@@ -45,8 +45,11 @@ password_confirmation.addEventListener('input',leerTexto2);
 formulario_account.addEventListener('submit', function(e) {
     e.preventDefault();
 
-    const { NIF, user_name, email, user_password } = account;
+    const { NIF, user_name, email, user_password , password_confirmation } = account;
 
+    console.log(user_password);
+    console.log(password_confirmation.value);
+    console.log(password_confirmation.textContent);
     if (NIF === '' || user_name === '' || email === '' || user_password === '') {
         mostrarError('Todos los campos son obligatorios', formulario_account);
         return;
