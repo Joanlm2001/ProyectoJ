@@ -12,7 +12,6 @@
 
 <section>
     <div class="div-gestion-usuarios">
-        <div class="container-users"></div>
         <ul>
             <li>ID:
                 <ul class="id">
@@ -49,7 +48,7 @@
 </section>
 
 <section>
-    <button type="button" class="boton-ver-producto">Atrás</button>
+    <button type="button" class="boton-ver-producto">Volver</button>
 </section>
 
 @endsection
