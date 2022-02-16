@@ -24,6 +24,7 @@ const getAll = async () => {
             $template.querySelector(".precio").textContent = index.price;
             $template.querySelector(".image").textContent = index.image;
             $template.querySelector(".taxe").textContent = index.taxe;
+            $template.querySelector(".discount").textContent = index.discount;
             $template.querySelector(".category").textContent = index.category;
             $template.querySelector(".description").textContent = index.description;
             $template.querySelector(".style").textContent = index.style;
@@ -31,6 +32,12 @@ const getAll = async () => {
             $template.querySelector(".edit").dataset.id = index.id;
             $template.querySelector(".edit").dataset.nombre = index.name;
             $template.querySelector(".edit").dataset.precio = index.price;
+            $template.querySelector(".edit").dataset.image = index.image;
+            $template.querySelector(".edit").dataset.taxe = index.taxe;
+            $template.querySelector(".edit").dataset.discount = index.discount;
+            $template.querySelector(".edit").dataset.category = index.category;
+            $template.querySelector(".edit").dataset.style = index.style;
+
             /* ---------------------------------------------------------- */
             $template.querySelector(".eliminar").dataset.id = index.id;
 
@@ -125,11 +132,18 @@ d.addEventListener('submit', async e =>{
 });
 
 d.addEventListener('click', async e =>{
+    console.log(e.target.dataset.description);
     if(e.target.matches(".edit")){
         editar.textContent = 'Editar';
         $form.nombre.value = e.target.dataset.nombre;
         $form.precio.value = e.target.dataset.precio;
         $form.id.value = e.target.dataset.id;
+        $form.image.value = e.target.dataset.image;
+        $form.taxe.value = e.target.dataset.taxe;
+        $form.category.value = e.target.dataset.category;
+        $form.discount.value = e.target.dataset.discount;
+        $form.description.value = e.target.dataset.description;
+        $form.style.value = e.target.dataset.style;
     }
     if(e.target.matches(".eliminar")){
 
