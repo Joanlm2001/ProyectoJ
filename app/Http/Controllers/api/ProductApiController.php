@@ -47,9 +47,9 @@ class ProductApiController extends Controller
         } else {
             $product->name = $nombreProducto;
         }
-        
+
         $precioProducto = $request->price;
-        if (is_float($precioProducto)) {
+        if (is_float($precioProducto) || is_integer($precioProducto)) {
             $product->name = $precioProducto;
         } else {
             return "El precio no es valido";
@@ -75,6 +75,13 @@ class ProductApiController extends Controller
             $product->category = $categoria;
         } else {
             return "La categoria ha de ser Muebles, Patas, Espejos o Accesorios";
+        }
+
+        $estilo=$request->style;
+        if($estilo === "Nordico" || $estilo === "Industrial" || $estilo === "Boho" || $estilo === "Glamour" ){
+            $product->style=$estilo;
+        }else{
+            return "El estilo ha de ser Nordico, Industrial, Boho o Glamour";
         }
 
         $product->image = $request->image;

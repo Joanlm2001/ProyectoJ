@@ -2,8 +2,6 @@
 
 @section('content')
 
-<main>
-    
-</main>
+<h1>Estas son las galletas</h1>
 
 @endsection

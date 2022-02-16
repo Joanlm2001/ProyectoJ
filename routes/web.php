@@ -21,7 +21,10 @@ use Illuminate\Support\Facades\Auth;
 
 Route::get('/', function () {
     return view('welcome');
-});
+})->name('index');
+Route::get('/error', function () {
+    return view('/errors/404');
+})->name('error');
 
 
 /* //Rutas del admin
@@ -87,6 +90,15 @@ Route::get('/politica', function () {
 Route::get('/terminos', function () {
     return view('terms');
 })->name('terminos');
+
+Route::get('/galletas', function () {
+    return view('coockies');
+})->name('galletas');
+
+Route::get('/nosotros', function () {
+    return view('about');
+})->name('nosotros');
+
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return view('dashboard');
