@@ -278,6 +278,11 @@ header section div ul {
     color: var(--azulOscuro);
 }
 
+.iconos-acceso-estilo form {
+    margin-bottom: 0px;
+
+}
+
 #iconos-resp {
     margin: 1rem 0;
 }
@@ -319,6 +324,7 @@ body header nav > ul > li{
 /*********************** Buscador ******************/
 .buscador {
     background-color: white;
+    font-family: var(--texto);
     font-size: 1rem;
     display: inline-block;
     border: none;
@@ -371,25 +377,29 @@ body header nav > ul > li{
 }
 
 #div-gestion {
-    display: flex;
-    justify-content: space-evenly;
-    padding-bottom: 6rem;
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    padding: 6rem 0;
+}
+
+a:link {
+    -webkit-text-decoration-line: none;
+    text-decoration-line: none;
 }
 
 .botones-gestion {
     display: flex;
     text-align: center;
-    text-decoration: none;
     text-transform: uppercase;
     font-weight: bold;
-    width: 8rem;
-    padding: 3rem 2rem;
+    padding: 3rem;
+    margin: 1rem;
     border: 2px solid var(--azulOscuro);
     color: var(--azulOscuro);
     border-radius: 0.3rem;
     transition: 100ms cubic-bezier(0.77, 0, 0.175, 1);
+    justify-content: center;
 }
-
 
 .botones-gestion:hover {
     transform: scale(1.05);
@@ -399,7 +409,6 @@ body header nav > ul > li{
 
 
 /************* PÁGINA GESTIÓN STOCK ************/
-
 #div-gestion-stock {
     display: flex;
     justify-content: center;
@@ -424,6 +433,77 @@ body header nav > ul > li{
 }
 /********** Fin de GESTIÓN STOCK **********/
 
+
+
+/************* PÁGINA GESTIÓN PRODUCTOS ************/
+.div-gestion-productos {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 2rem;
+}
+
+.div-gestion-productos h1, .div-gestion-productos h2{
+    font-size: 2rem;
+    padding: 1rem;
+    text-transform: uppercase;
+}
+
+.form-gestion-productos {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+#boton-enviar-gestion-productos {
+    text-transform: uppercase;
+    letter-spacing: 0.1rem;
+    padding: 1.8rem;
+    color: var(--blanco);
+    background-color: var(--azulOscuro);
+    border-radius: 0.3rem;
+    cursor: pointer;
+}
+
+#boton-enviar-gestion-productos:hover {
+    transform: scale(1.05);
+}
+
+.crud-table td, .crud-table tr {
+    padding: 0.5rem;
+}
+
+.eliminar {
+    color: rgb(231, 74, 74);
+}
+
+/********** Fin de GESTIÓN PRODUCTOS **********/
+
+
+
+/************* PÁGINA GESTIÓN USUARIOS ************/
+.titulo-gestion {
+    font-size: 3rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 3rem;
+    font-weight: bold;
+}
+
+.div-gestion-usuarios {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 2rem;
+}
+
+.div-gestion-usuarios ul ul{
+    margin: 1rem 0;
+    border-bottom: 2px solid;
+    font-weight: bold;
+}
+/********** Fin de GESTIÓN PRODUCTOS **********/
 
 
 
@@ -741,7 +821,7 @@ body header nav > ul > li{
 /******************* PRODUCTOS *******************/
 #container-products img {
     width: 100%;
-    padding: 3rem;
+    padding: 4rem;
 }
 
 #textos-featured {
@@ -1026,6 +1106,7 @@ body header nav > ul > li{
     }
 
 
+
     /* FOOTER */
     #contenedor-footer {
         padding: 2rem 4rem;
@@ -1117,9 +1198,9 @@ body header nav > ul > li{
 
     /************* Panel Admin **************/
     #div-gestion {
+        display: flex;
         padding: 1rem;
         align-content: center;
-        flex-wrap: wrap;
         flex-direction: column;
     }
 

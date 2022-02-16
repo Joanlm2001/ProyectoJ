@@ -1,41 +1,59 @@
+@extends('layouts.layoutAdmin')
+
 <script type="text/javascript" src="{!! asset('js/editarProductos.js') !!}" defer></script>
 
-<h1 class="accion">Agregar</h1>
-    <form class="crud-form" action="{{route('products.store')}}">
-        @csrf
+@section('content')
 
-        <input type="text" name="nombre" placeholder="Nombre" required>
-        <br>
-        <input type="text" name="precio" placeholder="Precio" required>
-        <br>
-        <input type="submit" value="Enviar">
-        <input type="hidden" name="id">
-    </form>
+<section> <!-- Título -->
+    <div class="titulo-gestion">
+        <h1>Gestión de productos</h1>
+    </div>
+</section>
 
-    <h2>Listar Productos</h2>
-    <table class="crud-table">
-        <thead>
+<section>
+    <div class="div-gestion-productos">
+        <h1 class="accion">Agregar Producto</h1>
+        <form class="crud-form form-gestion-productos" action="{{route('products.store')}}">
+            @csrf
+
+            <input type="text" name="nombre" placeholder="Nombre" required>
+            <br>
+            <input type="text" name="precio" placeholder="Precio" required>
+            <br>
+            <input id="boton-enviar-gestion-productos" type="submit" value="Enviar">
+            <input type="hidden" name="id">
+        </form>
+
+        <h2>Listar Productos</h2>
+        <table class="crud-table">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Nombre</th>
+                    <th>Precio</th>
+                    <th>Acciones</th>
+                </tr>
+                <tbody>
+                </tbody>
+            </thead>
+        </table>
+        <template id="crud-template">
             <tr>
-                <th>ID</th>
-                <th>Nombre</th>
-                <th>Precio</th>
-                <th>Acciones</th>
+                <td class="id"></td>
+                <td class="nombre"></td>
+                <td class="precio"></td>
+                <td>
+                    <button class="edit">Editar</button>
+                    <button class="eliminar">Eliminar</button>
+                </td>
+
             </tr>
-            <tbody>
-            </tbody>
-        </thead>
-    </table>
-    <template id="crud-template">
-        <tr>
-            <td class="id"></td>
-            <td class="nombre"></td>
-            <td class="precio"></td>
-            <td>
-                <button class="edit">Editar</button>
-                <button class="eliminar">Eliminar</button>
-            </td>
+        </template>
+    </div>
+</section>
 
-        </tr>
-    </template>
+<section>
+    <button type="button" class="boton-ver-producto">Atrás</button>
+</section>
 
-
+@endsection

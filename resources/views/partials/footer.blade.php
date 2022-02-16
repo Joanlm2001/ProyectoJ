@@ -7,16 +7,16 @@
                 <nav>
                     <ul class="ul-footer">
                         <li>
-                            <a class="li-footer" href="#">About</a>
+                            <a class="li-footer" href="{{route('nosotros')}}">About</a>
                         </li>
                         <li>
-                            <a class="li-footer" href="#">Política de Cookies</a>
+                            <a class="li-footer" href="{{route('galletas')}}">Política de Cookies</a>
                         </li>
                         <li>
-                            <a class="li-footer" href="#">Política de Privacidad</a>
+                            <a class="li-footer" href="{{route('policy')}}">Política de Privacidad</a>
                         </li>
                         <li>
-                            <a class="li-footer" href="#">Términos y Condiciones</a>
+                            <a class="li-footer" href="{{route('terminos')}}">Términos y Condiciones</a>
                         </li>
                     </ul>
                 </nav>
@@ -35,7 +35,7 @@
                 </article>
             </div>
             <div id="logo-footer">
-                <a href="#">
+                <a href="{{route("index")}}">
                     <img src={{ asset("../img/isotipo-azul-oscuro.png") }} alt="Isotipo de Projjject">
                 </a>
             </div>

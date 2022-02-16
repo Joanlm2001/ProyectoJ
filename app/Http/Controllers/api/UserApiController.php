@@ -38,6 +38,39 @@ class UserApiController extends Controller
     public function store(Request $request)
     {
         $user = new User();
+        //Nombre
+        $nameValidar = $request->name;
+        if ($nameValidar === '' || $nameValidar == null || is_numeric($nameValidar)) {
+            return "El nombre no es correcto";
+        } else {
+            $nameValidar = $user->name;
+        }
+        //Rol
+        $rolValidar = $request->rol;
+        if ($rolValidar  === '' || $rolValidar == null ||  is_numeric($rolValidar) || $rolValidar !== "Admin" || $rolValidar !== "Cliente") {
+            return "El rol no es valido";
+        } else {
+            return $user->rol = $rolValidar;
+        }
+
+        //DNI
+        $cadenaValidar = $request->dni;
+        if ($request->dni === '' || $request->dni == null) {
+            return "La cadena del DNI esta vacia";
+        }
+
+        $cadenaValidacion = "TRWAGMYFPDXBNJZSQVHLCKE";
+        $cadenaValidar = rtrim($cadenaValidar);
+        $cadenaValidar = substr($cadenaValidar, 0, -1);
+        $charValidar = $cadenaValidar % 23;
+
+        if ($charValidar !== $cadenaValidacion[$charValidar]) {
+            return "DNI erroneo";
+        } else {
+            $user->dni = $cadenaValidar;
+            return $cadenaValidar;
+        }
+
         $user->name = $request->name;
         $user->rol = $request->rol;
         $user->dni = $request->dni;
@@ -80,50 +113,9 @@ class UserApiController extends Controller
      */
     /*
 
-    $emailValidar=$request->email; */
-
-    public function devolverIndex(User $user){
-        return view('user.admin.index', compact ('user'));
-    }
-    
-    public function comprobarNombre(Request $request, User $user)
+    public function devolverIndex(User $user)
     {
-        $nameValidar = $request->name;
-        if ($nameValidar === '' || $nameValidar == null || is_numeric($nameValidar)) {
-            return "El nombre no es correcto";
-        } else {
-            $nameValidar = $user->name;
-        }
-    }
-
-    public function comprobarDNI(Request $request, User $user)
-    {
-        $cadenaValidar = $request->dni;
-        if ($request->dni === '' || $request->dni == null) {
-            return "La cadena del DNI esta vacia";
-        }
-
-        $cadenaValidacion = "TRWAGMYFPDXBNJZSQVHLCKE";
-        $cadenaValidar = rtrim($cadenaValidar);
-        $cadenaValidar = substr($cadenaValidar, 0, -1);
-        $charValidar = $cadenaValidar % 23;
-
-        if ($charValidar !== $cadenaValidacion[$charValidar]) {
-            return "DNI erroneo";
-        } else {
-            $user->dni = $cadenaValidar;
-            return $cadenaValidar;
-        }
-    }
-
-    public function comprobarRol(Request $request, User $user)
-    {
-        $rolValidar = $request->rol;
-        if ($rolValidar  === '' || $rolValidar == null ||  is_numeric($rolValidar) || $rolValidar !== "Admin" || $rolValidar !== "Cliente") {
-            return "El rol no es valido";
-        } else {
-            return $user->rol = $rolValidar;
-        }
+        return view('user.admin.index', compact('user'));
     }
 
     public function update(Request $request, User $user)
