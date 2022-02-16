@@ -39,11 +39,7 @@ Route::get('/user/admin', function () {
 });
 
 Route::get('/user/admin/stock', function () {
-    if (Auth::user()->rol === 'admin') {
         return view('/user/admin/gestStock');
-    } else {
-        redirect()->route('register');
-    }
 })->name('Stock');
 
 Route::get('/user/admin/users', function () {
@@ -56,12 +52,8 @@ Route::get('/user/admin/products', function () {
 
 //Ruta del cliente
 Route::get('/user/client', function () {
-    if (Auth::user()->rol === 'cliente') {
         return view('client');
-    } else {
-        redirect()->route('welcome');
-    }
-})->middleware(['auth:sanctum', 'verified']);
+});
 
 
 //Ruta del carrito
@@ -86,6 +78,15 @@ Route::get('/estilos', function () {
 Route::get('/estilos/productos', function () {
     return view('/styles/show');
 });
+
+//Rutas footer
+Route::get('/politica', function () {
+    return view('policy');
+})->name('policy');
+
+Route::get('/terminos', function () {
+    return view('terms');
+})->name('terminos');
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return view('dashboard');
