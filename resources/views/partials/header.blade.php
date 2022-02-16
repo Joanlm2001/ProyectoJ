@@ -8,16 +8,16 @@
                     </label>
 
                     <ul class="menu__box">
-                        <li><a class="menu__item" href="#">Muebles</a></li>
-                        <li><a class="menu__item" href="#">Espejos</a></li>
-                        <li><a class="menu__item" href="#">Accesorios</a></li>
-                        <li><a class="menu__item" href="#">Patas</a></li>
+                        <li><a class="menu__item" href="{{route("muebles")}}">Muebles</a></li>
+                        <li><a class="menu__item" href="{{route("espejos")}}">Espejos</a></li>
+                        <li><a class="menu__item" href="{{route("accesorios")}}">Accesorios</a></li>
+                        <li><a class="menu__item" href="{{route("patas")}}">Patas</a></li>
                         <li class="desplegable"><a class="menu__item" href="#">Estilos<i class="fas fa-chevron-down"></i></a>
                             <ul class="submenu">
-                                <li><a class="menu__item" href="#">Nórdico</a></li>
-                                <li><a class="menu__item" href="#">Boho</a></li>
-                                <li><a class="menu__item" href="#">Industrial</a></li>
-                                <li><a class="menu__item" href="#">Glamour</a></li>
+                                <li><a class="menu__item" href="{{route("nordico")}}">Nórdico</a></li>
+                                <li><a class="menu__item" href="{{route("boho")}}">Boho</a></li>
+                                <li><a class="menu__item" href="{{route("industrial")}}">Industrial</a></li>
+                                <li><a class="menu__item" href="{{route("glamour")}}">Glamour</a></li>
                             </ul>
                         </li>
                     </ul>

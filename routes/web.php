@@ -71,6 +71,22 @@ Route::resource('/cuenta', UserController::class)->parameters(['cuenta' => 'user
 Route::resource('/productos', ProductController::class)->parameters(["productos" => "product"]);
 
 //Ruta para las categorias
+Route::get('/accesorios', function () {
+    return view('/categories/accesorios');
+})->name('accesorios');
+
+Route::get('/espejos', function () {
+    return view('/categories/espejos');
+})->name('espejos');
+
+Route::get('/muebles', function () {
+    return view('/categories/muebles');
+})->name('muebles');
+
+Route::get('/patas', function () {
+    return view('/categories/patas');
+})->name('patas');
+
 /* Route::resource('/categorias', CategoryController::class)->parameters((['categorias' => 'category']));
  */
 
