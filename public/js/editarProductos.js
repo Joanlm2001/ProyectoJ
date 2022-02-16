@@ -86,7 +86,6 @@ d.addEventListener('submit', async e =>{
                 };
 
                 let res = await fetch('/api/products',options);
-
                 json = await res.json();
 
                 //manipulacion del error
@@ -95,7 +94,7 @@ d.addEventListener('submit', async e =>{
                 //recargar página despues de ver si hay algun error
                 location.reload();
             }catch(err){
-                console.log(err);
+
                 let message = err.statusText || "Ocurrio un error";
                 $form.insertAdjacentHTML("afterend",`<p><b>Error ${err.status}: ${message} </b></p>`);
             }
@@ -138,7 +137,7 @@ d.addEventListener('submit', async e =>{
 });
 
 d.addEventListener('click', async e =>{
-    console.log(e.target.dataset.description);
+
     if(e.target.matches(".edit")){
         editar.textContent = 'Editar';
         $form.nombre.value = e.target.dataset.nombre;

@@ -73,14 +73,31 @@ Route::resource('/productos', ProductController::class)->parameters(["productos"
 Route::resource('/categorias', CategoryController::class)->parameters((['categorias' => 'category']));
 
 
-//Ruta para los estilos
+//Ruta estilos
+Route::get('/boho', function () {
+    return view('/styles/boho');
+})->name('boho');
+
+Route::get('/glamour', function () {
+    return view('/styles/glamour');
+})->name('glamour');
+
+Route::get('/industrial', function () {
+    return view('/styles/industrial');
+})->name('industrial');
+
+Route::get('/nordico', function () {
+    return view('/styles/nordico');
+})->name('nordico');
+
+/* //Ruta para los estilos
 Route::get('/estilos', function () {
     return view('/styles/index');
 });
 
 Route::get('/estilos/productos', function () {
     return view('/styles/show');
-});
+}); */
 
 //Rutas footer
 Route::get('/politica', function () {
