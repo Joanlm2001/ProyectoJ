@@ -1952,6 +1952,10 @@ header section div ul {
     padding-right: 1rem;
     color: var(--azulOscuro);
 }
+.iconos-acceso-estilo form {
+    margin-bottom: 0px;
+
+}
 #iconos-resp {
     margin: 1rem 0;
 }
@@ -1988,6 +1992,7 @@ body header nav > ul > li{
 /*********************** Buscador ******************/
 .buscador {
     background-color: white;
+    font-family: var(--texto);
     font-size: 1rem;
     display: inline-block;
     border: none;
@@ -2439,7 +2444,7 @@ a:link {
 /******************* PRODUCTOS *******************/
 #container-products img {
     width: 100%;
-    padding: 3rem;
+    padding: 4rem;
 }
 #textos-featured {
     font-size: 4rem;
