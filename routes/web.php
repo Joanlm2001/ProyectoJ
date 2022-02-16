@@ -55,8 +55,8 @@ Route::get('/user/admin/products', function () {
 })->name('Productos');
 
 //Ruta del cliente
-Route::get('/user/client', function () {
-        return view('client');
+Route::get('client', function () {
+        return view('/user/client');
 });
 
 
