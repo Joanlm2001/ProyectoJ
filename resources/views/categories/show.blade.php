@@ -1,7 +1,8 @@
 @extends('layouts.layout')
+<script type="text/javascript" src="{!! asset('js/productos.js') !!}" defer></script>
+<script type="text/javascript" src="{!! asset('js/carrito.js') !!}" defer></script>
 
 @section('content')
-<script type="text/javascript" src="{!! asset('js/productos.js') !!}" defer></script>
 <h1 class="categoria" id="textos-featured">{{$category->name}}</h1>
 
 

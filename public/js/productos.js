@@ -18,7 +18,7 @@ const getAll = async (seguir) => {
     try{
         let res = await fetch('/api/products');
         json = await res.json();
-        console.log(json);
+        //console.log(json);
 
         json.forEach((productos)=>{
 
@@ -28,7 +28,7 @@ const getAll = async (seguir) => {
             }else if(productos.id >= seguir){
                 if(productos.category === categoriaProducto){
                     contador ++;
-                    console.log(contador);
+                    //console.log(contador);
                     let article = d.createElement('article');
                     let divImg = d.createElement('div');
                     let linkImg = d.createElement('a');
@@ -82,6 +82,7 @@ const getAll = async (seguir) => {
             getAll(seguir);
         });
 
+
     }catch(err){
         let message = err.statusText || "Ocurrio un error";
         divContainer.insertAdjacentHTML("afterend",`<p><b>Error ${err.status}: ${message} </b></p>`);
@@ -89,4 +90,11 @@ const getAll = async (seguir) => {
 }
 
 getAll(0);
+
+let botones = d.querySelectorAll('.boton-ver-producto');
+console.log(botones)
+for(boton in botones){
+console.log(boton)
+
+}
 
