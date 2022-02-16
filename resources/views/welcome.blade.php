@@ -1,6 +1,7 @@
 @extends('layouts.layout')
 
 <script type="text/javascript" src="{!! asset('js/slider.js') !!}" defer></script>
+<script type="text/javascript" src="{!! asset('js/carrito.js') !!}" defer></script>
 
 @section('content')
 
@@ -49,6 +50,9 @@
             </article>
         </div>
     </div>
+    <div class="boton-ver-productos">
+        <button href="#"> Ver Muebles</button>
+    </div>
 </section>
 
 <section><!--Products-->
@@ -95,6 +99,9 @@
                 </div>
             </article>
         </div>
+    </div>
+    <div class="boton-ver-x">
+        <button href="#"> Ver Muebles</button>
     </div>
 </section>
 
@@ -143,6 +150,9 @@
             </article>
         </div>
     </div>
+    <div class="boton-ver-x">
+        <button href="#"> Ver Espejos</button>
+    </div>
 </section>
 
 <section><!--Products-->
@@ -190,6 +200,9 @@
             </article>
         </div>
     </div>
+    <div class="boton-ver-x">
+        <button href="#"> Ver Patas</button>
+    </div>
 </section>
 
 <section><!--Products-->
@@ -236,6 +249,9 @@
                 </div>
             </article>
         </div>
+    </div>
+    <div class="boton-ver-x">
+        <button href="#"> Ver Accesorios</button>
     </div>
 </section>
 

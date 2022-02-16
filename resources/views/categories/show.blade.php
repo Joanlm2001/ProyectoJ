@@ -8,13 +8,10 @@
 
 
 <section>
-    <div id="container-products">
-    </div>
+    <div id="container-products"></div>
 </section>
 
 
-<div id="boton-ver-mas">
-
-</div>
+<div id="boton-ver-mas"></div>
 
 @endsection
