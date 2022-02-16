@@ -10,10 +10,10 @@
 
 <section>
     <div id="div-gestion-stock">
-        <button class="botones-gestion-stock">Productos más vendidos</button>
-        <button class="botones-gestion-stock">Productos menos vendidos</button>
-        <button class="botones-gestion-stock">Ver pedidos por fecha</button>
-        <button class="botones-gestion-stock">Ver pedidos por importe</button>
+        <button type="button" class="botones-gestion-stock">Productos más vendidos</button>
+        <button type="button" class="botones-gestion-stock">Productos menos vendidos</button>
+        <button type="button" class="botones-gestion-stock">Ver pedidos por fecha</button>
+        <button type="button" class="botones-gestion-stock">Ver pedidos por importe</button>
     </div>
     <div id="container-products">
         <div>
