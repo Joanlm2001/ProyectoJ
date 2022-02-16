@@ -1,4 +1,4 @@
-@extends('layouts.layout')
+@extends('layouts.layoutAdmin')
 
 <script type="text/javascript" src="{!! asset('js/editarProductos.js') !!}" defer></script>
 
