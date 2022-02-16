@@ -7,7 +7,7 @@ use App\Http\Controllers\ProductController;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
-
+use Illuminate\Support\Facades\DB;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -22,6 +22,7 @@ use Illuminate\Support\Facades\Auth;
 Route::get('/', function () {
     return view('welcome');
 })->name('index');
+
 Route::get('/error', function () {
     return view('/errors/404');
 })->name('error');
@@ -54,8 +55,8 @@ Route::get('/user/admin/products', function () {
 })->name('Productos');
 
 //Ruta del cliente
-Route::get('/user/client', function () {
-        return view('client');
+Route::get('client', function () {
+        return view('/user/client');
 });
 
 
@@ -69,11 +70,34 @@ Route::resource('/cuenta', UserController::class)->parameters(['cuenta' => 'user
 
 Route::resource('/productos', ProductController::class)->parameters(["productos" => "product"]);
 
-//Ruta para las categorias
 Route::resource('/categorias', CategoryController::class)->parameters((['categorias' => 'category']));
 
+//Ruta para las categorias
+Route::get('/accesorios', function () {
+    return view('/categories/accesorios');
+})->name('accesorios');
 
-//Ruta estilos
+Route::get('/espejos', function () {
+    return view('/categories/espejos');
+})->name('espejos');
+
+Route::get('/muebles', function () {
+    return view('/categories/muebles');
+})->name('muebles');
+
+Route::get('/patas', function () {
+    return view('/categories/patas');
+})->name('patas');
+
+Route::get('listacategorias', function(){
+    return view('/categories/show');
+})->name('listacategorias');
+/* Route::get('/categorias', function () {
+    return view('/categories/index');
+})->name('categorias'); */
+
+
+//Ruta para los estilos
 Route::get('/boho', function () {
     return view('/styles/boho');
 })->name('boho');
@@ -89,15 +113,13 @@ Route::get('/industrial', function () {
 Route::get('/nordico', function () {
     return view('/styles/nordico');
 })->name('nordico');
-
-/* //Ruta para los estilos
-Route::get('/estilos', function () {
+/* Route::get('/estilos', function () {
     return view('/styles/index');
-});
+}); */
 
 Route::get('/estilos/productos', function () {
     return view('/styles/show');
-}); */
+});
 
 //Rutas footer
 Route::get('/politica', function () {

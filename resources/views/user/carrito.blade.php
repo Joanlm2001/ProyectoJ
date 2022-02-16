@@ -11,7 +11,7 @@
 
 <section> <!-- Productos del carrito -->
     <article class="cart">
-        <img src="/PROJJJECT/img/product04.jpg" alt="Foto de producto" style="width:35%">
+        <img src="../img/Nook.webp" alt="Foto de producto" style="width:35%">
         <div>
             <h1>Producto 1</h1>
             <p>Texto descripcion de un producto.</p>
