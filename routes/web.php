@@ -22,6 +22,7 @@ use Illuminate\Support\Facades\Auth;
 Route::get('/', function () {
     return view('welcome');
 })->name('index');
+
 Route::get('/error', function () {
     return view('/errors/404');
 })->name('error');
@@ -70,13 +71,28 @@ Route::resource('/cuenta', UserController::class)->parameters(['cuenta' => 'user
 Route::resource('/productos', ProductController::class)->parameters(["productos" => "product"]);
 
 //Ruta para las categorias
-Route::resource('/categorias', CategoryController::class)->parameters((['categorias' => 'category']));
-
+/* Route::resource('/categorias', CategoryController::class)->parameters((['categorias' => 'category']));
+ */
 
 //Ruta para los estilos
-Route::get('/estilos', function () {
+Route::get('/boho', function () {
+    return view('/styles/boho');
+})->name('boho');
+
+Route::get('/glamour', function () {
+    return view('/styles/glamour');
+})->name('glamour');
+
+Route::get('/industrial', function () {
+    return view('/styles/industrial');
+})->name('industrial');
+
+Route::get('/nordico', function () {
+    return view('/styles/nordico');
+})->name('nordico');
+/* Route::get('/estilos', function () {
     return view('/styles/index');
-});
+}); */
 
 Route::get('/estilos/productos', function () {
     return view('/styles/show');
