@@ -76,12 +76,12 @@ d.addEventListener('submit', async e =>{
                     body:JSON.stringify({
                         name:e.target.nombre.value,
                         price: (precioFinal),
-                        image:e.target.nombre.value,
-                        taxe:5,
-                        discount:5,
-                        category: 'Muebles',
-                        description:'NADA',
-                        style:'Industrial'
+                        image:e.target.image.value,
+                        taxe:e.target.taxe.value,
+                        discount:e.target.discount.value,
+                        category:e.target.category.value,
+                        description:e.target.description.value,
+                        style:e.target.style.value
                     })
                 };
 
@@ -108,8 +108,14 @@ d.addEventListener('submit', async e =>{
                         "Content-type": "application/json;charset=UTF-8"
                     },
                     body:JSON.stringify({
-                        nombre:e.target.name.value,
-                        precio:e.target.price.value
+                        name:e.target.nombre.value,
+                        price: (precioFinal),
+                        image:e.target.image.value,
+                        taxe:e.target.taxe.value,
+                        discount:e.target.discount.value,
+                        category:e.target.category.value,
+                        description:e.target.description.value,
+                        style:e.target.style.value
                     })
                 };
                 console.log(`${e.target.id.value}`);
