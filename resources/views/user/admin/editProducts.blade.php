@@ -20,6 +20,19 @@
             <br>
             <input type="text" name="precio" placeholder="Precio" required>
             <br>
+            <input type="text" name="image" placeholder="Imagen" required>
+            <br>
+            <input type="text" name="taxe" placeholder="Taxe" required>
+            <br>
+            <input type="text" name="discount" placeholder="Discount" required>
+            <br>
+            <input type="text" name="category" placeholder="Category" required>
+            <br>
+            <input type="text" name="description" placeholder="Description" required>
+            <br>
+            <input type="text" name="style" placeholder="Style" required>
+            <br>
+
             <input id="boton-enviar-gestion-productos" type="submit" value="Enviar">
             <input type="hidden" name="id">
         </form>

@@ -41,16 +41,19 @@ class ProductApiController extends Controller
     {
         $product = new Product();
 
+        $product->price = 0;
+        $product->numSell = 0;
+
         $nombreProducto = $request->name;
         if ($nombreProducto === '' || $nombreProducto == null || is_numeric($nombreProducto)) {
             return "El nombre no es correcto";
         } else {
             $product->name = $nombreProducto;
         }
-        
+
         $precioProducto = $request->price;
-        if (is_float($precioProducto)) {
-            $product->name = $precioProducto;
+        if (is_float($precioProducto) || is_integer($precioProducto)) {
+            $product->price = $precioProducto;
         } else {
             return "El precio no es valido";
         }
@@ -77,6 +80,28 @@ class ProductApiController extends Controller
             return "La categoria ha de ser Muebles, Patas, Espejos o Accesorios";
         }
 
+        $estilo=$request->style;
+        if($estilo === "Nordico" || $estilo === "Industrial" || $estilo === "Boho" || $estilo === "Glamour" ){
+            $product->style=$estilo;
+        }else{
+            return "El estilo ha de ser Nordico, Industrial, Boho o Glamour";
+        }
+        $category_id = $request->category_id;
+        if($categoria === "Muebles"){
+            $category_id = 1;
+            $product->category_id = $category_id;
+        }else if($categoria === "Patas"){
+            $category_id = 2;
+            $product->category_id = $category_id;
+        }else if($categoria === "Espejos"){
+            $category_id = 3;
+            $product->category_id = $category_id;
+        }else if($categoria === "Accesorios"){
+            $category_id = 4;
+            $product->category_id = $category_id;
+        }
+
+        $product->description = $request->description;
         $product->image = $request->image;
         $product->save();
 

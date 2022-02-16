@@ -1,9 +1,6 @@
 @extends('layouts.layout')
 
 @section('content')
-
-<main>
-    
-</main>
+<h1 class="Industrial">Industrial</h1>
 
 @endsection

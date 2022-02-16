@@ -43,7 +43,7 @@ password_confirmation.addEventListener('input',leerTexto2);
 
 /* FORMULARIO PARA LAS CUENTAS */
 formulario_account.addEventListener('submit', function(e) {
-    e.preventDefault();
+    //e.preventDefault();
 
     const { NIF, user_name, email, user_password , password_confirmation } = account;
 

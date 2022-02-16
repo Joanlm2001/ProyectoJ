@@ -21,7 +21,11 @@ use Illuminate\Support\Facades\Auth;
 
 Route::get('/', function () {
     return view('welcome');
-});
+})->name('index');
+
+Route::get('/error', function () {
+    return view('/errors/404');
+})->name('error');
 
 
 /* //Rutas del admin
@@ -67,13 +71,28 @@ Route::resource('/cuenta', UserController::class)->parameters(['cuenta' => 'user
 Route::resource('/productos', ProductController::class)->parameters(["productos" => "product"]);
 
 //Ruta para las categorias
-Route::resource('/categorias', CategoryController::class)->parameters((['categorias' => 'category']));
-
+/* Route::resource('/categorias', CategoryController::class)->parameters((['categorias' => 'category']));
+ */
 
 //Ruta para los estilos
-Route::get('/estilos', function () {
+Route::get('/boho', function () {
+    return view('/styles/boho');
+})->name('boho');
+
+Route::get('/glamour', function () {
+    return view('/styles/glamour');
+})->name('glamour');
+
+Route::get('/industrial', function () {
+    return view('/styles/industrial');
+})->name('industrial');
+
+Route::get('/nordico', function () {
+    return view('/styles/nordico');
+})->name('nordico');
+/* Route::get('/estilos', function () {
     return view('/styles/index');
-});
+}); */
 
 Route::get('/estilos/productos', function () {
     return view('/styles/show');
@@ -87,6 +106,15 @@ Route::get('/politica', function () {
 Route::get('/terminos', function () {
     return view('terms');
 })->name('terminos');
+
+Route::get('/galletas', function () {
+    return view('coockies');
+})->name('galletas');
+
+Route::get('/nosotros', function () {
+    return view('about');
+})->name('nosotros');
+
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return view('dashboard');

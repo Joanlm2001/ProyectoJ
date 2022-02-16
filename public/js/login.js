@@ -22,7 +22,7 @@ password_login.addEventListener('input', leerTexto);
 
 /* FORMULARIO LOGIN */
 formulario.addEventListener('submit', function(e) {
-    e.preventDefault();
+    //e.preventDefault();
 
     const { email_login, password_login } = login;
 
@@ -34,6 +34,7 @@ formulario.addEventListener('submit', function(e) {
         mostrarError('La contraseña es obligatoria', formulario);
         return;
     }
+
     console.log('Formulario enviado');
 });
 
