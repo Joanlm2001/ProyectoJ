@@ -53,7 +53,7 @@
 </section>
 
 <section>
-    <button type="button" class="boton-ver-producto">Atrás</button>
+    <button type="button" class="boton-ver-producto">Volver</button>
 </section>
 
 @endsection
