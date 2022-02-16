@@ -259,7 +259,6 @@ header section div ul {
 #iconos-acceso {
     display: flex;
     list-style: none;
-    padding: 1rem 0;
 }
 
 #iconos-acceso ul li{
@@ -277,6 +276,10 @@ header section div ul {
     text-decoration: none;
     padding-right: 1rem;
     color: var(--azulOscuro);
+}
+
+#iconos-resp {
+    margin: 1rem 0;
 }
 
 .count {
@@ -529,7 +532,7 @@ body header nav > ul > li{
     display: flex;
     align-items: center;
     justify-content: flex-end;
-    background-image: url(img/nordico.jpg);
+    background-image: url(../img/nordico.jpg);
     background-position-y: center;
     height: 30rem;
     background-size: cover;
@@ -552,6 +555,8 @@ body header nav > ul > li{
 #texto-slider-01+h2 {
     background-color: rgba(255, 255, 255, 0.5);
     padding: 0.5rem 2rem;
+    margin: 1rem 0;
+    font-weight: bold;
     text-align: right;
 }
 #btn-slider-01 {
@@ -582,7 +587,7 @@ body header nav > ul > li{
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: flex-start;
-    background-image: url(img/boho.jpg);
+    background-image: url(../img/boho.jpg);
     background-position-y: center;
     height: 30rem;
     background-size: cover;
@@ -602,6 +607,8 @@ body header nav > ul > li{
 }
 #texto-slider-02+h2 {
     padding: 1rem;
+    font-size: x-large;
+    font-weight: bold;
 }
 
 #btn-slider-02 {
@@ -612,7 +619,7 @@ body header nav > ul > li{
     height: 3rem;
     width: max-content;
     padding: 0 2rem;
-    border-style: none;
+    border: 2px solid var(--azulOscuro);
     cursor: pointer;
     transition: all 400ms cubic-bezier(0.77, 0, 0.175, 1);
 }
@@ -629,7 +636,7 @@ body header nav > ul > li{
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: flex-start;
-    background-image: url(img/industrial.jpg);
+    background-image: url(../img/industrial.jpg);
     background-position-y: center;
     height: 30rem;
     background-size: cover;
@@ -647,7 +654,10 @@ body header nav > ul > li{
 }
 #texto-slider-03+h2 {
     background-color: rgba(255, 255, 255, 0.5);
-    padding: 0.5rem 2rem;
+    padding: 0.5rem 1rem;
+    margin: 1rem 0;
+    font-weight: bold;
+    font-size: x-large;
 }
 #container-boton-slider-03 {
     display: flex;
@@ -681,7 +691,7 @@ body header nav > ul > li{
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: flex-start;
-    background-image: url(img/glamour.jpg);
+    background-image: url(../img/glamour.jpg);
     background-position-y: top;
     height: 30rem;
     background-size: cover;
@@ -695,6 +705,11 @@ body header nav > ul > li{
     text-align: left;
     margin: 0px;
     line-height: 3rem;
+    padding-top: 2rem;
+}
+#texto-slider-04+h2 {
+    font-size: 1.5rem;
+    margin: 1rem 0;
 }
 #container-boton-slider-04 {
     display: flex;
@@ -708,6 +723,7 @@ body header nav > ul > li{
     font-family: 'Domine', 'serif';
     font-weight: bold;
     height: 3rem;
+    margin-top: 2rem;
     width: max-content;
     padding: 0 2rem;
     border-radius: 2rem;
@@ -725,17 +741,17 @@ body header nav > ul > li{
 /******************* PRODUCTOS *******************/
 #container-products img {
     width: 100%;
-    padding: 4rem;
+    padding: 3rem;
 }
 
 #textos-featured {
-    font-size: 2rem;
+    font-size: 4rem;
     letter-spacing: 0.4rem;
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding-bottom: 2rem;
-    padding-top: 4rem;
+    padding-top: 3rem;
+    font-weight: bold;
     font-family: 'Domine';
 }
 
@@ -773,6 +789,10 @@ body header nav > ul > li{
     color: var(--dorado);
 }
 
+.descripcion-producto {
+    margin: 2rem;
+}
+
 .precio-producto {
     color: var(--azulClaro);
     font-weight: bold;
@@ -795,6 +815,8 @@ body header nav > ul > li{
     color: var(--azulOscuro);
     font-size: 1rem;
     font-family: 'Open Sans';
+    font-weight: bold;
+    text-transform: uppercase;
     margin: 1rem 0;
 }
 
@@ -813,7 +835,7 @@ body header nav > ul > li{
     width: 4rem;
 }
 
-#boton-ver-mas {
+#boton-ver-mas, .boton-ver-x {
     display: flex;
     justify-content: center;
     padding: 3rem 0;
@@ -821,7 +843,7 @@ body header nav > ul > li{
 
 
 /* Botón Ver más */
-#boton-ver-mas a {
+#boton-ver-mas button {
     text-align: center;
     text-decoration: none;
     text-transform: uppercase;
@@ -834,10 +856,28 @@ body header nav > ul > li{
     transition: 100ms cubic-bezier(0.77, 0, 0.175, 1);
 }
 
-#boton-ver-mas a:hover {
+#boton-ver-mas button:hover {
     transform: scale(1.05);
 }
 /* Fin de botón Ver más */
+
+/* Botón Ver más x */
+.boton-ver-x button {
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 1.8rem;
+    background-color: var(--azulOscuro);
+    padding: 0.5rem 10%;
+    color: var(--dorado);
+    border-radius: 0.3rem;
+    transition: 400ms cubic-bezier(0.77, 0, 0.175, 1);
+}
+
+.boton-ver-x button:hover {
+    transform: scale(1.03);
+}
+/* Fin de botón Ver más x */
+
 
 /************************************************************** FOOTER *********************************************************************/
 
@@ -850,6 +890,8 @@ body header nav > ul > li{
 
 #contenedor-footer h1 {
     font-size: 2rem;
+    font-weight: bold;
+    padding-bottom: 1rem;
 }
 
 .ul-footer {
@@ -883,10 +925,6 @@ body header nav > ul > li{
 
 .icono-textos-footer img {
     height: 3rem;
-}
-
-.icono-textos-footer div p {
-    line-height: 0.5rem;
 }
 
 .link {
@@ -1022,7 +1060,7 @@ body header nav > ul > li{
     }
 
     #footer-inferior ul li {
-        padding: 0 2.5rem;
+        padding: 1rem 1.9rem;
         font-size: 1.5rem;
     }
 
@@ -1035,6 +1073,7 @@ body header nav > ul > li{
     .flex-container {
         flex-direction: column;
         justify-content: center;
+        padding-bottom: 1rem;
     }
 
 
@@ -1075,6 +1114,7 @@ body header nav > ul > li{
         text-align: center;
     }
 
+
     /************* Panel Admin **************/
     #div-gestion {
         padding: 1rem;
@@ -1090,9 +1130,9 @@ body header nav > ul > li{
 
     #textos-featured {
         text-align: center;
-        padding-bottom: 0rem;
-        padding-top: 0rem;
+        padding: 0rem 1rem;
         margin: 1rem;
+        font-size: 3rem;
     }
     /************** Fin de Panel Admin **************/
 
@@ -1151,7 +1191,7 @@ body header nav > ul > li{
     }
 
     #footer-inferior ul li {
-        padding: 0 2.5rem;
+        padding: 1rem 1.9rem;
         font-size: 1.5rem;
     }
 

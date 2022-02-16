@@ -79,17 +79,28 @@ class ProductApiController extends Controller
             }
         }
 
-        function validarDisponible(Request $request, Product $product){
-            $disponible=$request->disponible;
+        function validarDisponible(Request $request, Product $product)
+        {
+            $disponible = $request->disponible;
             if ($disponible === 1 || $disponible === 0) {
-                
+                $product->disponible = $disponible;
+            } else {
+                return "La disponibilidad ha de ser 1 o 0";
+            }
+        }
+
+        function validarCategoria(Request $request, Product $product)
+        {
+            $categoria = $request->category;
+            $categoria = trim($categoria);
+            if ($categoria === "Muebles" || $categoria === "Patas" || $categoria === "Espejos" || $categoria === "Accesorios") {
+                $product->category = $categoria;
+            } else {
+                return "La categoria ha de ser Muebles, Patas, Espejos o Accesorios";
             }
         }
         $product = new Product();
-        $product->disponible = $request->disponible;
         $product->image = $request->image;
-        $product->category = $request->category;
-
         $product->save();
 
         return response()->json(["nombre" => $product->name], 201);

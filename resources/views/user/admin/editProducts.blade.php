@@ -1,5 +1,9 @@
+<script type="text/javascript" src="{!! asset('js/editarProductos.js') !!}" defer></script>
+
 <h1 class="accion">Agregar</h1>
-    <form class="crud-form">
+    <form class="crud-form" action="{{route('products.store')}}">
+        @csrf
+
         <input type="text" name="nombre" placeholder="Nombre" required>
         <br>
         <input type="text" name="precio" placeholder="Precio" required>
