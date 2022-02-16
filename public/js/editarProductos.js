@@ -36,6 +36,7 @@ const getAll = async () => {
             $template.querySelector(".edit").dataset.taxe = index.taxe;
             $template.querySelector(".edit").dataset.discount = index.discount;
             $template.querySelector(".edit").dataset.category = index.category;
+            $template.querySelector(".edit").dataset.description = index.description;
             $template.querySelector(".edit").dataset.style = index.style;
 
             /* ---------------------------------------------------------- */
@@ -136,11 +137,9 @@ d.addEventListener('submit', async e =>{
     }
 });
 
-d.addEventListener('click', async e =>{
 
-    if(e.target.matches(".edit")){
-        editar.textContent = 'Editar';
-        $form.nombre.value = e.target.dataset.nombre;
+d.addEventListener('click', async e =>{
+        console.log(e.target.dataset.description);
         $form.precio.value = e.target.dataset.precio;
         $form.id.value = e.target.dataset.id;
         $form.image.value = e.target.dataset.image;
@@ -149,8 +148,8 @@ d.addEventListener('click', async e =>{
         $form.discount.value = e.target.dataset.discount;
         $form.description.value = e.target.dataset.description;
         $form.style.value = e.target.dataset.style;
-    }
-    if(e.target.matches(".eliminar")){
+
+        if(e.target.matches(".eliminar")){
 
         let isDelete = confirm(`Estas seguro de querer eliminar el producto ${e.target.dataset.id}?`);
 
