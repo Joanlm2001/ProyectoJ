@@ -10,13 +10,13 @@
                             <a class="li-footer" href="#">About</a>
                         </li>
                         <li>
-                            <a class="li-footer" href="#">Política de Cookies</a>
+                            <a class="li-footer" href="{{route('policy')}}">Política de Cookies</a>
                         </li>
                         <li>
                             <a class="li-footer" href="#">Política de Privacidad</a>
                         </li>
                         <li>
-                            <a class="li-footer" href="#">Términos y Condiciones</a>
+                            <a class="li-footer" href="{{route('terminos')}}">Términos y Condiciones</a>
                         </li>
                     </ul>
                 </nav>
