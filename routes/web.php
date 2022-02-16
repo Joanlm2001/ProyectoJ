@@ -22,6 +22,7 @@ use Illuminate\Support\Facades\Auth;
 Route::get('/', function () {
     return view('welcome');
 })->name('index');
+
 Route::get('/error', function () {
     return view('/errors/404');
 })->name('error');
@@ -54,8 +55,8 @@ Route::get('/user/admin/products', function () {
 })->name('Productos');
 
 //Ruta del cliente
-Route::get('/user/client', function () {
-        return view('client');
+Route::get('client', function () {
+        return view('/user/client');
 });
 
 
@@ -70,13 +71,44 @@ Route::resource('/cuenta', UserController::class)->parameters(['cuenta' => 'user
 Route::resource('/productos', ProductController::class)->parameters(["productos" => "product"]);
 
 //Ruta para las categorias
-Route::resource('/categorias', CategoryController::class)->parameters((['categorias' => 'category']));
+Route::get('/accesorios', function () {
+    return view('/categories/accesorios');
+})->name('accesorios');
 
+Route::get('/espejos', function () {
+    return view('/categories/espejos');
+})->name('espejos');
+
+Route::get('/muebles', function () {
+    return view('/categories/muebles');
+})->name('muebles');
+
+Route::get('/patas', function () {
+    return view('/categories/patas');
+})->name('patas');
+
+/* Route::resource('/categorias', CategoryController::class)->parameters((['categorias' => 'category']));
+ */
 
 //Ruta para los estilos
-Route::get('/estilos', function () {
+Route::get('/boho', function () {
+    return view('/styles/boho');
+})->name('boho');
+
+Route::get('/glamour', function () {
+    return view('/styles/glamour');
+})->name('glamour');
+
+Route::get('/industrial', function () {
+    return view('/styles/industrial');
+})->name('industrial');
+
+Route::get('/nordico', function () {
+    return view('/styles/nordico');
+})->name('nordico');
+/* Route::get('/estilos', function () {
     return view('/styles/index');
-});
+}); */
 
 Route::get('/estilos/productos', function () {
     return view('/styles/show');

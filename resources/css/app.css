@@ -487,7 +487,7 @@ a:link {
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding-top: 3rem;
+    padding: 3rem;
     font-weight: bold;
 }
 
@@ -498,9 +498,17 @@ a:link {
     margin: 2rem;
 }
 
+.div-gestion-usuarios>ul {
+    display: flex;
+    border-bottom: 1px solid;
+}
+
+.div-gestion-usuarios li {
+    margin: 0 0.5rem;
+}
+
 .div-gestion-usuarios ul ul{
     margin: 1rem 0;
-    border-bottom: 2px solid;
     font-weight: bold;
 }
 /********** Fin de GESTIÓN PRODUCTOS **********/
@@ -1224,6 +1232,15 @@ a:link {
         flex-direction: column;
     }
     /************** Fin de Página Gestión de stock **************/
+
+
+
+    /************* Página Gestión de Usuarios **************/
+    .div-gestion-usuarios>ul {
+        flex-direction: column;
+    }
+    /************** Fin de Página Gestión de Usuarios **************/
+
 
 
     /****************** SHOPPING CART ******************/
