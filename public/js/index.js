@@ -58,6 +58,9 @@ const getAll = async (lugar, categoria) => {
                     divBoton.append(boton);
                     article.append(divImg,tituloProducto,descripcion,precio,divBoton);
                     lugar.append(article);
+                     /* Database */
+                     boton.dataset.value = productos.id;
+                     console.log(boton.dataset)
                 }
         });
 
@@ -67,10 +70,54 @@ const getAll = async (lugar, categoria) => {
     }
 }
 
-getAll(containerMuebles,'Muebles');
-getAll(containerAccesorios,'Accesorios');
-getAll(containerEspejos,'Espejos');
-getAll(containerPatas,'Patas');
+getAll(containerMuebles,'Muebles').then(() => {
+    let botones = d.querySelectorAll('.boton-ver-producto');
+    let numProductos = 0;
+    for(let boton of botones){
+        boton.addEventListener('click',function(e){
+            numProductos += 1;
+            console.log(e);
+            window.sessionStorage.setItem(numProductos,e.target.dataset.value);
+
+        })
+    }
+});
+getAll(containerAccesorios,'Accesorios').then(() => {
+    let botones = d.querySelectorAll('.boton-ver-producto');
+    let numProductos = 0;
+    for(let boton of botones){
+        boton.addEventListener('click',function(e){
+            numProductos += 1;
+            console.log(e);
+            window.sessionStorage.setItem(numProductos,e.target.dataset.value);
+
+        })
+    }
+});
+getAll(containerEspejos,'Espejos').then(() => {
+    let botones = d.querySelectorAll('.boton-ver-producto');
+    let numProductos = 0;
+    for(let boton of botones){
+        boton.addEventListener('click',function(e){
+            numProductos += 1;
+            console.log(e);
+            window.sessionStorage.setItem(numProductos,e.target.dataset.value);
+
+        })
+    }
+});
+getAll(containerPatas,'Patas').then(() => {
+    let botones = d.querySelectorAll('.boton-ver-producto');
+    let numProductos = 0;
+    for(let boton of botones){
+        boton.addEventListener('click',function(e){
+            numProductos += 1;
+            console.log(e);
+            window.sessionStorage.setItem(numProductos,e.target.dataset.value);
+
+        })
+    }
+});
 
 
 

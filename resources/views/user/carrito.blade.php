@@ -1,5 +1,5 @@
 @extends('layouts.layout')
-
+<script type="text/javascript" src="{!! asset('js/carrito.js') !!}" defer></script>
 @section('content')
 
 <section> <!-- Título -->
@@ -9,16 +9,8 @@
     </div>
 </section>
 
-<section> <!-- Productos del carrito -->
-    <article class="cart">
-        <img src="../img/Nook.webp" alt="Foto de producto" style="width:35%">
-        <div>
-            <h1>Producto 1</h1>
-            <p>Texto descripcion de un producto.</p>
-            <p class="precio-cart">599 €</p>
-            <button>Eliminar producto</button>
-        </div>
-    </article>
+<section id="seccion-carrito-compra"> <!-- Productos del carrito -->
+
 </section>
 
 <section><!-- Botón Comprar -->
