@@ -10,6 +10,7 @@
                     <ul class="menu__box">
                         <li><a class="menu__item" href="{{route("muebles")}}">Muebles</a></li>
                         <li><a class="menu__item" href="{{route("espejos")}}">Espejos</a></li>
+
                         <li><a class="menu__item" href="{{route("accesorios")}}">Accesorios</a></li>
                         <li><a class="menu__item" href="{{route("patas")}}">Patas</a></li>
                         <li class="desplegable"><a class="menu__item" href="#">Estilos<i class="fas fa-chevron-down"></i></a>
@@ -38,7 +39,7 @@
                         </form>
                     </li>
                     <li><!--User-->
-                        
+
                         <a class="fa fa-user iconos-acceso-estilo" href="{{route('profile.show')}}"></a>
 
                     </li>
