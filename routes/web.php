@@ -4,6 +4,7 @@ use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProductController;
+use App\Models\Product;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -63,7 +64,7 @@ Route::get('client', function () {
 //Ruta del carrito
 Route::get('carrito', function () {
     return view('/user/carrito');
-});
+})->name('Carrito');
 
 //Ruta para la pagina de los usuarios
 Route::resource('/cuenta', UserController::class)->parameters(['cuenta' => 'user'])->middleware(['auth']);
@@ -74,23 +75,27 @@ Route::resource('/categorias', CategoryController::class)->parameters((['categor
 
 //Ruta para las categorias
 Route::get('/accesorios', function () {
-    return view('/categories/accesorios');
+    $products = Product::where('category','Accesorios')->get();
+    return view('categories.accesorios', compact('products'));
 })->name('accesorios');
 
 Route::get('/espejos', function () {
-    return view('/categories/espejos');
+    $products = Product::where('category','Espejos')->get();
+    return view('categories.espejos', compact('products'));
 })->name('espejos');
 
 Route::get('/muebles', function () {
-    return view('/categories/muebles');
+    $products = Product::where('category','Muebles')->get();
+    return view('categories.muebles', compact('products'));
 })->name('muebles');
 
 Route::get('/patas', function () {
-    return view('/categories/patas');
+    $products = Product::where('category','Patas')->get();
+    return view('categories.patas', compact('products'));
 })->name('patas');
 
 Route::get('listacategorias', function(){
-    return view('/categories/show');
+    return view('categories.show');
 })->name('listacategorias');
 /* Route::get('/categorias', function () {
     return view('/categories/index');

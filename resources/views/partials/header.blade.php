@@ -39,12 +39,10 @@
                         </form>
                     </li>
                     <li><!--User-->
-
                         <a class="fa fa-user iconos-acceso-estilo" href="{{route('profile.show')}}"></a>
-
                     </li>
                     <li><!--Cesta-->
-                        <a class="fa fa-shopping-basket iconos-acceso-estilo" href="#"></a>
+                        <a class="fa fa-shopping-basket iconos-acceso-estilo" href="{{route('Carrito')}}"></a>
                         <span class="count" id="header-count">3</span>
                     </li>
                 </ul>
