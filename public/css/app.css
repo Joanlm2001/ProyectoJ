@@ -1757,6 +1757,9 @@ a:link{
 .cursor {
     cursor: pointer;
 }
+.negrita {
+    font-weight: bold;
+}
 /* Fin aplicación general */
 #scroll-top {
     display: none;
