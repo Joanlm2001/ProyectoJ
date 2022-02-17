@@ -2565,6 +2565,38 @@ a:link {
     transform: scale(1.03);
 }
 /* Fin de botón Ver más x */
+/********************* PÁGINA ABOUT US ********************/
+.au-column {
+    margin-bottom: 2rem;
+    padding: 0 1rem;
+}
+.au-card {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    margin: 1rem;
+}
+.au-section {
+    padding: 2rem;
+    text-align: center;
+    background-color: #474e5d;
+    color: white;
+}
+.au-container {
+    padding: 1rem;
+    text-align: center;
+}
+.au-container h2 {
+    font-weight: bold;
+    font-size: 1rem;
+}
+/* .au-row {
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    justify-items: center;
+} */
+.au-title {
+    color: grey;
+}
+/********************* Fin de PÁGINA ABOUT US ********************/
 /************************************************************** FOOTER *********************************************************************/
 #contenedor-footer {
     display: grid;
@@ -2686,6 +2718,12 @@ a:link {
         text-align: center;
     }
 
+
+/*     /* ABOUT US
+    .au-row {
+        display: grid;
+        justify-items: stretch;
+    } */
 
 
     /* FOOTER */
