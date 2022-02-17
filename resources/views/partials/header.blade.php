@@ -8,7 +8,7 @@
                     </label>
 
                     <ul class="menu__box">
-                        <li><a class="menu__item" href="{{route("muebles")}}">Muebles</a></li>
+                        <li><a class="menu__item" href="{{route('muebles')}}">Muebles</a></li>
                         <li><a class="menu__item" href="{{route("espejos")}}">Espejos</a></li>
 
                         <li><a class="menu__item" href="{{route("accesorios")}}">Accesorios</a></li>

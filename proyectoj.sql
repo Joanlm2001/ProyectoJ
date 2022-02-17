@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 17-02-2022 a las 19:42:28
+-- Tiempo de generación: 17-02-2022 a las 20:11:28
 -- Versión del servidor: 10.4.21-MariaDB
 -- Versión de PHP: 8.0.10
 
@@ -52,6 +52,16 @@ CREATE TABLE `categories` (
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Volcado de datos para la tabla `categories`
+--
+
+INSERT INTO `categories` (`id`, `name`, `created_at`, `updated_at`) VALUES
+(1, 'Muebles', NULL, NULL),
+(2, 'Patas', NULL, NULL),
+(3, 'Accesorios', NULL, NULL),
+(4, 'Espejos', NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -191,6 +201,58 @@ CREATE TABLE `products` (
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
+--
+-- Volcado de datos para la tabla `products`
+--
+
+INSERT INTO `products` (`id`, `name`, `description`, `category`, `style`, `price`, `taxe`, `discount`, `image`, `numSell`, `category_id`, `created_at`, `updated_at`) VALUES
+(1, 'Nook', 'Mueble de baño de estilo nórdico en 80, 100, 120 y 140 cm. Varios acabados disponibles.', 'Muebles', 'Nordico', 549.00, 21, 10, 'Nook', 5, 1, NULL, NULL),
+(2, 'Bend', 'Mueble de baño de estilo boho en 60 y 80 cm. Acabado blanco brillo. Patas incluidas.', 'Muebles', 'Boho', 399.00, 21, 10, 'Bend', 0, 1, NULL, NULL),
+(3, 'Olive', 'Mueble de baño de estilo industrial en 80, 100 y 120 cm. Acabado verde mate y blanco mate.', 'Muebles', 'Industrial', 719.00, 21, 10, 'Olive', 0, 1, NULL, NULL),
+(4, 'Kol', 'Mueble de baño de estilo industrial en 60, 70, 80, 90 y 100 cm. Varios acabados disponibles.', 'Muebles', 'Industrial', 670.00, 21, 10, 'Kol', 0, 1, NULL, NULL),
+(5, 'Belle', 'Mueble de baño de estilo glamour en 80 cm. Acabado blanco mate.', 'Muebles', 'Glamour', 419.00, 21, 10, 'Belle', 7, 1, NULL, NULL),
+(6, 'Classy', 'Mueble de baño de estilo glamour en 60, 80 y 100 cm. Varios acabados disponibles.', 'Muebles', 'Glamour', 649.00, 21, 10, 'Classy', 0, 1, NULL, NULL),
+(7, 'Baltic', 'Mueble de baño de estilo boho en 80, 90, 100 y 110 cm. Acabados en madera natural.', 'Muebles', 'Boho', 780.00, 21, 10, 'Baltic', 0, 1, NULL, NULL),
+(8, 'Maya', 'Mueble de baño de estilo industrial en 100 cm. Varios acabados disponibles.', 'Muebles', 'Industrial', 510.00, 21, 10, 'Maya', 1, 1, NULL, NULL),
+(9, 'Alaska', 'Mueble de baño de estilo nórdico en 80 y 100 cm. Acabado azul oscuro mate. Patas incluidas.', 'Muebles', 'Nordico', 639.00, 21, 10, 'Alaska', 0, 1, NULL, NULL),
+(10, 'Bliss', 'Mueble de baño de estilo glamour en 80 cm. Acabado blanco mate y rosa pálido.', 'Muebles', 'Glamour', 809.00, 21, 10, 'Bliss', 0, 1, NULL, NULL),
+(11, 'Vega', 'Mueble de baño de estilo boho en 60, 80, 100 y 120 cm. Varios acabados disponibles.', 'Muebles', 'Boho', 539.00, 21, 10, 'Vega', 0, 1, NULL, NULL),
+(12, 'Narcisse', 'Mueble de baño de estilo industrial en 100, 120 y 140 cm. Acabado gris espejo y bronce espejo.', 'Muebles', 'Industrial', 949.00, 21, 10, 'Narcisse', 3, 1, NULL, NULL),
+(13, 'Essential', 'Mueble de baño de estilo industrial en 60 y 80 cm. Acabado en blanco brillo.', 'Muebles', 'Industrial', 319.00, 21, 10, 'Essential', 0, 1, NULL, NULL),
+(14, 'Frida', 'Mueble de baño de estilo glamour en 90, 100 y 110 cm. Acabado negro y dorado.', 'Muebles', 'Glamour', 779.00, 21, 10, 'Frida', 0, 1, NULL, NULL),
+(15, 'Salvio', 'Mueble de baño de estilo nórdico en 60, 80, 100 y 120 cm. Varios acabados disponibles.', 'Muebles', 'Nordico', 509.00, 21, 10, 'Salvio', 0, 1, NULL, NULL),
+(16, 'Flavia', 'Mueble de baño de estilo nórdico en 80 y 100 cm. Acabado blanco mate y maderas. Patas incluidas.', 'Muebles', 'Nordico', 559.00, 21, 10, 'Flavia', 0, 1, NULL, NULL),
+(17, 'Ona', 'Mueble de baño de estilo glamour en 60, 80 y 100 cm. Varios acabados disponibles.', 'Muebles', 'Glamour', 609.00, 21, 10, 'Ona', 9, 1, NULL, NULL),
+(18, 'Wabi', 'Mueble de baño de estilo boho en 80, 90, 100 y 110 cm. Acabados en madera natural.', 'Muebles', 'Boho', 709.00, 21, 10, 'Wabi', 4, 1, NULL, NULL),
+(19, 'Mireia', 'Mueble de baño de estilo industrial en 100 y 120 cm. Varios acabados disponibles.', 'Muebles', 'Industrial', 510.00, 21, 10, 'Mireia', 0, 1, NULL, NULL),
+(20, 'Aldo', 'Mueble de baño de estilo nórdico en 80 y 100 cm. Acabado gris ceniza.', 'Muebles', 'Nordico', 749.00, 21, 10, 'Aldo', 0, 1, NULL, NULL),
+(22, 'Terra', 'Mueble de baño de estilo industrial en 80, 100 y 120 cm. Acabado naranja mate y blanco mate.', 'Muebles', 'Industrial', 589.00, 21, 10, 'Terra', 2, 1, NULL, NULL),
+(23, 'Chloe', 'Mueble de baño de estilo industrial en 60, 70, 80, 90 y 100 cm. Varios acabados disponibles.', 'Muebles', 'Industrial', 970.00, 21, 10, 'Chloe', 0, 1, NULL, NULL),
+(24, 'Balea', 'Mueble de baño de estilo glamour en 80 cm. Acabado blanco mate.', 'Muebles', 'Glamour', 619.00, 21, 10, 'Balea', 0, 1, NULL, NULL),
+(25, ' Arco', 'Mueble de baño de estilo boho en 60, 80 y 100 cm. Varios acabados disponibles.', 'Muebles', 'Boho', 649.00, 21, 10, 'Arco', 2, 1, NULL, NULL),
+(26, 'Nexo', 'Patas para mueble de baño de estilo nórdico.', 'Patas', 'Nordico', 45.00, 21, 5, 'Nexo', 6, 2, NULL, NULL),
+(27, 'Bend', 'Patas para mueble de baño de estilo nórdico.', 'Patas', 'Nordico', 37.00, 21, 5, 'Bend', 0, 2, NULL, NULL),
+(28, 'Alice', 'Patas para mueble de baño de estilo boho.', 'Patas', 'Boho', 25.00, 21, 5, 'Alice', 0, 2, NULL, NULL),
+(29, 'Nature', 'Patas para mueble de baño de estilo boho.', 'Patas', 'Boho', 41.00, 21, 5, 'Nature', 0, 2, NULL, NULL),
+(30, 'Lute', 'Patas para mueble de baño de estilo industrial.', 'Patas', 'Industrial', 33.00, 21, 5, 'Lute', 0, 2, NULL, NULL),
+(31, 'Porto', 'Patas para mueble de baño de estilo industrial.', 'Patas', 'Industrial', 24.00, 21, 5, 'Porto', 0, 2, NULL, NULL),
+(32, 'Caliu', 'Patas para mueble de baño de estilo glamour.', 'Patas', 'Glamour', 22.00, 21, 5, 'Caliu', 0, 2, NULL, NULL),
+(33, 'Soleil', 'Patas para mueble de baño de estilo glamour.', 'Patas', 'Glamour', 37.00, 21, 5, 'Soleil', 0, 2, NULL, NULL),
+(34, 'Bruno', 'Espejo para mueble de baño de estilo nórdico.', 'Espejos', 'Nordico', 45.00, 21, 5, 'Bruno', 0, 4, NULL, NULL),
+(35, 'Telmo', 'Espejo para mueble de baño de estilo nórdico.', 'Espejos', 'Nordico', 37.00, 21, 5, 'Telmo', 0, 4, NULL, NULL),
+(36, 'Ebro', 'Espejo para mueble de baño de estilo boho.', 'Espejos', 'Boho', 25.00, 21, 5, 'Ebro', 0, 4, NULL, NULL),
+(37, 'Aleix', 'Espejo para mueble de baño de estilo boho.', 'Espejos', 'Boho', 41.00, 21, 5, 'Aleix', 0, 4, NULL, NULL),
+(38, 'Lliso', 'Espejo para mueble de baño de estilo industrial.', 'Espejos', 'Industrial', 33.00, 21, 5, 'Lliso', 0, 4, NULL, NULL),
+(39, 'Paok', 'Espejo para mueble de baño de estilo industrial.', 'Espejos', 'Industrial', 24.00, 21, 5, 'Paok', 0, 4, NULL, NULL),
+(40, 'Huguet', 'Espejo para mueble de baño de estilo glamour.', 'Espejos', 'Glamour', 22.00, 21, 5, 'Huguet', 0, 4, NULL, NULL),
+(41, 'Jofre', 'Espejo para mueble de baño de estilo glamour.', 'Espejos', 'Glamour', 37.00, 21, 5, 'Jofre', 0, 4, NULL, NULL),
+(42, 'Lau', 'Accesorio para mueble de baño de estilo nórdico.', 'Accesorios', 'Nordico', 45.00, 21, 5, 'Lau', 0, 3, NULL, NULL),
+(43, 'Dania', 'Accesorio para mueble de baño de estilo nórdico.', 'Accesorios', 'Nordico', 37.00, 21, 5, 'Dania', 0, 3, NULL, NULL),
+(44, 'Anna', 'Accesorio para mueble de baño de estilo boho.', 'Accesorios', 'Boho', 25.00, 21, 5, 'Anna', 0, 3, NULL, NULL),
+(45, 'Naima', 'Accesorio para mueble de baño de estilo nórdico.', 'Accesorios', 'Nordico', 45.00, 21, 5, 'Naima', 0, 3, NULL, NULL),
+(48, 'Lena', 'Accesorio para mueble de baño de estilo nórdico.', 'Accesorios', 'Nordico', 37.00, 21, 5, 'Lena', 0, 3, NULL, NULL),
+(49, 'May', 'Accesorio para mueble de baño de estilo boho.', 'Accesorios', 'Boho', 25.00, 21, 5, 'May', 0, 3, NULL, NULL);
+
 -- --------------------------------------------------------
 
 --
@@ -212,7 +274,7 @@ CREATE TABLE `sessions` (
 --
 
 INSERT INTO `sessions` (`id`, `user_id`, `ip_address`, `user_agent`, `payload`, `last_activity`) VALUES
-('IkhBJ84oYfje2q6sfEnefdUpAxKl3uvBHWMzs4YI', NULL, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/98.0.4758.102 Safari/537.36', 'YTozOntzOjY6Il90b2tlbiI7czo0MDoiWWJJdGdpYVYxejh5aWhic1hhbEhDQ1hrMTJGQ0dEdHY0MmVVOWV2WiI7czo2OiJfZmxhc2giO2E6Mjp7czozOiJvbGQiO2E6MDp7fXM6MzoibmV3IjthOjA6e319czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6Mjc6Imh0dHA6Ly8xMjcuMC4wLjE6ODAwMC9wYXRhcyI7fX0=', 1645123239);
+('AwbgryDULotzkdHlOdcn4avqvLmfquofyA8tFR1e', NULL, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/98.0.4758.102 Safari/537.36', 'YTo0OntzOjY6Il90b2tlbiI7czo0MDoiWkl5MHpyRFc3aEM3ZVlHRWxCQ2xPQWJCU2JNTUJJU3RIWGhuTm9TciI7czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6Mjk6Imh0dHA6Ly8xMjcuMC4wLjE6ODAwMC9jYXJyaXRvIjt9czo2OiJfZmxhc2giO2E6Mjp7czozOiJvbGQiO2E6MDp7fXM6MzoibmV3IjthOjA6e319czozOiJ1cmwiO2E6MTp7czo4OiJpbnRlbmRlZCI7czozNDoiaHR0cDovLzEyNy4wLjAuMTo4MDAwL3VzZXIvcHJvZmlsZSI7fX0=', 1645125032);
 
 -- --------------------------------------------------------
 
@@ -224,17 +286,16 @@ DROP TABLE IF EXISTS `users`;
 CREATE TABLE `users` (
   `id` bigint(20) UNSIGNED NOT NULL,
   `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `rol` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `dni` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `email` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `avatar` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `avatar` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `email_verified_at` timestamp NULL DEFAULT NULL,
   `password` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `two_factor_secret` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `two_factor_recovery_codes` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `adress` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `remember_token` varchar(100) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `current_team_id` bigint(20) UNSIGNED DEFAULT NULL,
-  `adress_id` bigint(20) UNSIGNED DEFAULT NULL,
   `profile_photo_path` varchar(2048) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
@@ -244,8 +305,8 @@ CREATE TABLE `users` (
 -- Volcado de datos para la tabla `users`
 --
 
-INSERT INTO `users` (`id`, `name`, `dni`, `email`, `avatar`, `email_verified_at`, `password`, `two_factor_secret`, `two_factor_recovery_codes`, `adress`, `remember_token`, `current_team_id`, `adress_id`, `profile_photo_path`, `created_at`, `updated_at`) VALUES
-(1, 'Javier', '44523061Y', 'jarical11@gmail.com', NULL, NULL, '$2y$10$7B8o2VPXj0FfD0gHTAr92u4uBanQG1ZaZj56cwQXRGi32uF6xXT9W', NULL, NULL, NULL, 'b3Rh6czWZw37CrMJQBgM5nkci26wupK0ZvfnBNP1zs3yrcHJWGyyjC6Dj8m1', NULL, NULL, 'profile-photos/8zvZJzj96avjSyunFupWkhnLxXjFkXhULGidPaSf.png', '2022-02-17 15:02:35', '2022-02-17 15:04:22');
+INSERT INTO `users` (`id`, `name`, `rol`, `dni`, `email`, `avatar`, `email_verified_at`, `password`, `two_factor_secret`, `two_factor_recovery_codes`, `remember_token`, `current_team_id`, `profile_photo_path`, `created_at`, `updated_at`) VALUES
+(1, 'Jorge Román Calero', 'cliente', '73598631B', 'jromancalero@gmail.com', '', NULL, '11111111', NULL, NULL, NULL, NULL, NULL, NULL, NULL);
 
 --
 -- Índices para tablas volcadas
@@ -326,7 +387,6 @@ ALTER TABLE `sessions`
 --
 ALTER TABLE `users`
   ADD PRIMARY KEY (`id`),
-  ADD UNIQUE KEY `users_dni_unique` (`dni`),
   ADD UNIQUE KEY `users_email_unique` (`email`);
 
 --
@@ -343,7 +403,7 @@ ALTER TABLE `adressess`
 -- AUTO_INCREMENT de la tabla `categories`
 --
 ALTER TABLE `categories`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT de la tabla `failed_jobs`
@@ -379,7 +439,7 @@ ALTER TABLE `personal_access_tokens`
 -- AUTO_INCREMENT de la tabla `products`
 --
 ALTER TABLE `products`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=53;
 
 --
 -- AUTO_INCREMENT de la tabla `users`

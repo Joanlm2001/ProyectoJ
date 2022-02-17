@@ -83,4 +83,11 @@ class CategoryController extends Controller
     {
         //
     }
+
+    //Añadido con Álex
+    public function categoriaXNombre($nombre){
+        $categoria = Category::where('name', $nombre)->get();
+        $productos = $categoria->products;
+        return view('pornombre', compact('productos', 'Nombre'));
+    }
 }
