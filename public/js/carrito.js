@@ -69,7 +69,8 @@ const generarCarrito = async function(){
 generarCarrito().then(()=>{
     let botones = document.querySelectorAll('.boton-eliminar');
     let articles = document.querySelectorAll('article');
-    let titulos = document.querySelectorAll('title');
+    let botonFinalizarCompra = document.querySelector('')
+
     for(let boton of botones){
         boton.addEventListener('click',function(e){
             console.log(e)
@@ -92,5 +93,7 @@ generarCarrito().then(()=>{
 
         });
     }
+
+
 });
 

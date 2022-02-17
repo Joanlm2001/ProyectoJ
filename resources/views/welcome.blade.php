@@ -5,7 +5,7 @@
 
 @section('content')
 
-<section><!--Slider-->
+<section><!--Products-->
     <div class="mySlides fade">
         <div id="slider-01">
             <article id="div-slider-01">
@@ -17,6 +17,18 @@
             </article>
         </div>
     </div>
+    <div id="textos-featured">
+        <h1>MUEBLES</h1>
+    </div>
+    <div id="container-products" class="container-muebles">
+
+    </div>
+    <div class="boton-ver-x">
+        <button href="#"> Ver Muebles</button>
+    </div>
+</section>
+
+<section><!--Products-->
     <div class="mySlides fade">
         <div id="slider-02">
             <article id="div-slider-02">
@@ -28,6 +40,18 @@
             </article>
         </div>
     </div>
+    <div id="textos-featured">
+        <h1>ESPEJOS</h1>
+    </div>
+    <div id="container-products" class="container-espejos">
+
+    </div>
+    <div class="boton-ver-x">
+        <button href="#"> Ver Espejos</button>
+    </div>
+</section>
+
+<section><!--Products-->
     <div class="mySlides fade">
         <div id="slider-03">
             <article>
@@ -39,6 +63,19 @@
             </article>
         </div>
     </div>
+    <div id="textos-featured">
+        <h1>PATAS</h1>
+    </div>
+    <div id="container-products" class="container-patas">
+
+
+    </div>
+    <div class="boton-ver-x">
+        <button href="#"> Ver Patas</button>
+    </div>
+</section>
+
+<section><!--Products-->
     <div class="mySlides fade">
         <div id="slider-04">
             <article>
@@ -53,50 +90,10 @@
     <div class="boton-ver-productos">
         <button href="#"> Ver Muebles</button>
     </div>
-</section>
-
-<section><!--Products-->
-    <div id="textos-featured">
-        <h1>MUEBLES</h1>
-    </div>
-    <div id="container-muebles">
-
-    </div>
-    <div class="boton-ver-x">
-        <button href="#"> Ver Muebles</button>
-    </div>
-</section>
-
-<section><!--Products-->
-    <div id="textos-featured">
-        <h1>ESPEJOS</h1>
-    </div>
-    <div id="container-espejos">
-
-    </div>
-    <div class="boton-ver-x">
-        <button href="#"> Ver Espejos</button>
-    </div>
-</section>
-
-<section><!--Products-->
-    <div id="textos-featured">
-        <h1>PATAS</h1>
-    </div>
-    <div id="container-patas">
-
-
-    </div>
-    <div class="boton-ver-x">
-        <button href="#"> Ver Patas</button>
-    </div>
-</section>
-
-<section><!--Products-->
     <div id="textos-featured">
         <h1>ACCESORIOS</h1>
     </div>
-    <div id="container-accesorios">
+    <div id="container-products" class="container-accesorios">
 
     </div>
     <div class="boton-ver-x">

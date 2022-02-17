@@ -1,9 +1,9 @@
 
 let d = document;
-let containerMuebles = document.querySelector('#container-muebles');
-let containerEspejos = document.querySelector('#container-espejos');
-let containerPatas = document.querySelector('#container-patas');
-let containerAccesorios = document.querySelector('#container-accesorios');
+let containerMuebles = document.querySelector('.container-muebles');
+let containerEspejos = document.querySelector('.container-espejos');
+let containerPatas = document.querySelector('.container-patas');
+let containerAccesorios = document.querySelector('.container-accesorios');
 
 const getAll = async (lugar, categoria) => {
 
