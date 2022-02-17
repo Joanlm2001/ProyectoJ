@@ -101,7 +101,7 @@ getAll(0).then(() => {
             console.log(e);
             window.sessionStorage.setItem(numProductos,e.target.dataset.value);
 
-        })
+        });
     }
 })
 

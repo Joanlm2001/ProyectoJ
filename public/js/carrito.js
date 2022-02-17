@@ -119,6 +119,8 @@ generarCarrito().then(()=>{
                 }
             }
         }
+        precioFin.className = 'precio-final';
+        div.className = 'divCompra';
         precioFin.textContent = `Precio final: ${precioFinal} €`;
         div.append(precioFin);
         sessionStorage.clear();

@@ -1298,3 +1298,25 @@ a:link {
 .categoria{
     margin-bottom: 50px;
 }
+
+.divCompra{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #a8f1a8;
+}
+
+.divCompra p {
+    font-size: 1.3rem;
+    font-weight: bold;
+}
+
+.divCompra h1{
+    font-size: 1.3rem;
+    font-weight: bold;
+}
+.precio-final{
+    font-size: 1.6rem;
+    font-weight: bold;
+    color: red;
+}
