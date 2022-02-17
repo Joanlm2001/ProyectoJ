@@ -7,7 +7,7 @@ use App\Http\Controllers\ProductController;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
-
+use Illuminate\Support\Facades\DB;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -70,6 +70,8 @@ Route::resource('/cuenta', UserController::class)->parameters(['cuenta' => 'user
 
 Route::resource('/productos', ProductController::class)->parameters(["productos" => "product"]);
 
+Route::resource('/categorias', CategoryController::class)->parameters((['categorias' => 'category']));
+
 //Ruta para las categorias
 Route::get('/accesorios', function () {
     return view('/categories/accesorios');
@@ -87,8 +89,13 @@ Route::get('/patas', function () {
     return view('/categories/patas');
 })->name('patas');
 
-/* Route::resource('/categorias', CategoryController::class)->parameters((['categorias' => 'category']));
- */
+Route::get('listacategorias', function(){
+    return view('/categories/show');
+})->name('listacategorias');
+/* Route::get('/categorias', function () {
+    return view('/categories/index');
+})->name('categorias'); */
+
 
 //Ruta para los estilos
 Route::get('/boho', function () {
@@ -124,7 +131,7 @@ Route::get('/terminos', function () {
 })->name('terminos');
 
 Route::get('/galletas', function () {
-    return view('coockies');
+    return view('cookies');
 })->name('galletas');
 
 Route::get('/nosotros', function () {
