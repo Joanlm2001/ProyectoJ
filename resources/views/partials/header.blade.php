@@ -45,7 +45,7 @@
                     </li>
                     <li><!--Cesta-->
                         <a class="fa fa-shopping-basket iconos-acceso-estilo" href="#"></a>
-                        <span class="count">3</span>
+                        <span class="count" id="header-count">3</span>
                     </li>
                 </ul>
             </section>

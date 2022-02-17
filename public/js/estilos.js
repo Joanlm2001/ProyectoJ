@@ -6,7 +6,8 @@ let estilo = d.querySelector('.estilo');
 let estiloProducto = estilo.textContent;
 estilo.textContent = estilo.textContent.toLocaleUpperCase();
 let divContainer = d.querySelector('#container-products');
-
+let miniCarrito = d.querySelector('#header-count');
+miniCarrito.textContent = sessionStorage.length;
 let contador = 0;
 let botonVerMas = d.createElement('button');
 let divBotonVerMas = d.querySelector('#boton-ver-mas');
@@ -100,8 +101,8 @@ getAll(0).then(() => {
             numProductos = sessionStorage.length + 1;
             console.log(e);
             window.sessionStorage.setItem(numProductos,e.target.dataset.value);
-
-        })
+            miniCarrito.textContent = sessionStorage.length;
+        });
     }
 })
 

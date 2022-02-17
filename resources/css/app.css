@@ -1354,3 +1354,27 @@ a:link {
 .categoria{
     margin-bottom: 50px;
 }
+
+.divCompra{
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+.divCompra p {
+    font-size: 1.3rem;
+    border-bottom: 2px solid;
+    text-align: center;
+}
+
+.divCompra h1{
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-top: 1rem;
+    text-align: center;
+}
+.precio-final{
+    font-size: 2rem;
+    font-weight: bold;
+    color: var(--dorado);
+    text-align: center;
+}

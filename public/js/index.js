@@ -4,6 +4,8 @@ let containerMuebles = document.querySelector('.container-muebles');
 let containerEspejos = document.querySelector('.container-espejos');
 let containerPatas = document.querySelector('.container-patas');
 let containerAccesorios = document.querySelector('.container-accesorios');
+let miniCarrito = d.querySelector('#header-count');
+miniCarrito.textContent = sessionStorage.length;
 
 const getAll = async (lugar, categoria) => {
 
@@ -78,7 +80,7 @@ getAll(containerMuebles,'Muebles').then(() => {
             numProductos += 1;
             console.log(e);
             window.sessionStorage.setItem(numProductos,e.target.dataset.value);
-
+            miniCarrito.textContent = sessionStorage.length;
         })
     }
 });
@@ -90,7 +92,7 @@ getAll(containerAccesorios,'Accesorios').then(() => {
             numProductos += 1;
             console.log(e);
             window.sessionStorage.setItem(numProductos,e.target.dataset.value);
-
+            miniCarrito.textContent = sessionStorage.length;
         })
     }
 });
@@ -102,7 +104,7 @@ getAll(containerEspejos,'Espejos').then(() => {
             numProductos += 1;
             console.log(e);
             window.sessionStorage.setItem(numProductos,e.target.dataset.value);
-
+            miniCarrito.textContent = sessionStorage.length;
         })
     }
 });

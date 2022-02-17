@@ -1,5 +1,7 @@
 
 let divContainer = document.querySelector('#seccion-carrito-compra');
+let miniCarrito = document.querySelector('#header-count');
+miniCarrito.textContent = sessionStorage.length;
 
 function obtenerDatos(){
 
@@ -92,6 +94,7 @@ generarCarrito().then(()=>{
             }
 
         });
+        miniCarrito.textContent = sessionStorage.length;
     }
     botonFinalizarCompra.addEventListener('click', async function(){
 
@@ -107,7 +110,6 @@ generarCarrito().then(()=>{
                 //console.log(json[productos].id);
                 if(json[productos].id == index){
 
-
                     let titulo = document.createElement('h1');
                     titulo.textContent = `Artículo: ${json[productos].name}`;
                     let precio = document.createElement('p');
@@ -119,11 +121,14 @@ generarCarrito().then(()=>{
                 }
             }
         }
+        precioFin.className = 'precio-final';
+        div.className = 'divCompra';
         precioFin.textContent = `Precio final: ${precioFinal} €`;
         div.append(precioFin);
         sessionStorage.clear();
         divContainer.innerHTML = '';
         divContainer.append(div);
+        miniCarrito.textContent = sessionStorage.length;
     });
 
 
