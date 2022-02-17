@@ -4,7 +4,10 @@
 <script type="text/javascript" src="{!! asset('js/carrito.js') !!}" defer></script>
 
 @section('content')
-<h1 class="estilo">Industrial</h1>
+<div id="textos-featured">
+    <h1 class="estilo">Industrial</h1>
+</div>
+
 
 
 

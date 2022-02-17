@@ -12,7 +12,7 @@
                 <h1 id="texto-slider-01">NORDIC is coming!</h1><!--Texto H1-->
                 <h2>Descubre la nueva colección</h2>
                 <div>
-                    <button id="btn-slider-01">Ver estilo Nórdico</button><!--Botón-->
+                    <a id="btn-slider-01"  href="{{route("nordico")}} ">Ver estilo Nórdico</a><!--Botón-->
                 </div>
             </article>
         </div>
@@ -35,7 +35,7 @@
                 <h1 id="texto-slider-02">Pasión por lo natural</h1><!--Texto H1-->
                 <h2>Tu baño, más cálido</h2>
                 <div>
-                    <button id="btn-slider-02">Ver estilo Boho</button><!--Botón-->
+                    <a  href="{{route("boho")}} " id="btn-slider-02">Ver estilo Boho</a><!--Botón-->
                 </div>
             </article>
         </div>
@@ -58,7 +58,7 @@
                 <h1 id="texto-slider-03">Estructuras a la vista</h1><!--Texto H1-->
                 <h2>Muebles de baño con mucho carácter</h2>
                 <div>
-                    <button id="btn-slider-03">Ver estilo Industrial</button><!--Botón-->
+                    <a href="{{route("industrial")}} " id="btn-slider-03">Ver estilo Industrial</a><!--Botón-->
                 </div>
             </article>
         </div>
@@ -82,7 +82,7 @@
                 <h1 id="texto-slider-04">¿Buscas sofisticación?</h1><!--Texto H1-->
                 <h2>Traemos el lujo para el baño</h2>
                 <div>
-                    <button id="btn-slider-04">Ver estilo Glamour</button><!--Botón-->
+                    <a href="{{route("glamour")}} " id="btn-slider-04">Ver estilo Glamour</a><!--Botón-->
                 </div>
             </article>
         </div>

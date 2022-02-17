@@ -131,7 +131,7 @@ Route::get('/terminos', function () {
 })->name('terminos');
 
 Route::get('/galletas', function () {
-    return view('cookies');
+    return view('coockies');
 })->name('galletas');
 
 Route::get('/nosotros', function () {
