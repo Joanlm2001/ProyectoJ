@@ -1,5 +1,6 @@
-@extends('layouts.layout')
 
+@extends('layouts.layout')
+<script type="text/javascript" src="{!! asset('js/productos.js') !!}" defer></script>
 @section('content')
 <h1 class="muebles">{{$nombre}}</h1>
 
@@ -10,3 +11,4 @@
 No hay productos
 @endforelse
 @endsection
+

@@ -14,7 +14,8 @@ class ProductController extends Controller
      */
     public function index()
     {
-        //
+        $products = Product::all();
+        return view('products.index',compact('products'));
     }
 
     /**
@@ -27,6 +28,16 @@ class ProductController extends Controller
         //
     }
 
+    public function productCategory(){
+        $products = Product::all();
+        $productsFinal=[];
+        foreach($products as $product){
+            if(strcmp($product->category->name,"Muebles")){
+                array_push($productsFinal,$product);
+            }
+        }
+        return $productsFinal;
+    }
     /**
      * Store a newly created resource in storage.
      *
@@ -46,7 +57,7 @@ class ProductController extends Controller
      */
     public function show(Product $product)
     {
-        //
+        return view('products.show',compact('product'));
     }
 
     /**
