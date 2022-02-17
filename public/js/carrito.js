@@ -4,7 +4,6 @@ let divContainer = document.querySelector('#seccion-carrito-compra');
 function obtenerDatos(){
 
     let arrayProductos = [];
-
     for(let i = 0; i < sessionStorage.length;i++){
         arrayProductos.push(sessionStorage.getItem(sessionStorage.key(i)));
         console.log(arrayProductos);
@@ -20,12 +19,13 @@ const generarCarrito = async function(){
         let res = await fetch('/api/products');
         json = await res.json();
         console.log(json);
-
+        let controlador = 0;
         for(let index of arrayProductos){
 
             for(let productos in json){
                 //console.log(json[productos].id);
                 if(json[productos].id == index){
+                    controlador += 1;
 
                     let article = document.createElement('article');
                     article.className = 'cart';
@@ -45,8 +45,12 @@ const generarCarrito = async function(){
                     botonBorrar.textContent = 'ELIMINAR PRODUCTO';
                     botonBorrar.className = 'boton-eliminar';
 
-                    botonBorrar.dataset.value = productos.id;
-                    article.dataset.value = productos.id;
+                    botonBorrar.dataset.value = json[productos].id;
+                    botonBorrar.name = controlador;
+                    article.dataset.value = json[productos].id;
+
+                  /*   console.log(botonBorrar.dataset.value);
+                    console.log(article.dataset.value); */
 
                     div.append(titulo,descripcion,precio,botonBorrar);
                     article.append(img,div);
@@ -65,10 +69,22 @@ const generarCarrito = async function(){
 generarCarrito().then(()=>{
     let botones = document.querySelectorAll('.boton-eliminar');
     let articles = document.querySelectorAll('article');
+    let titulos = document.querySelectorAll('title');
     for(let boton of botones){
         boton.addEventListener('click',function(e){
+            console.log(e)
+
+            console.log(e.target.name)
+            for(let i = 0; i < sessionStorage.length +1;i++){
+                console.log(i);
+                if(i == e.target.name){
+                    sessionStorage.removeItem(i);
+                }
+            }
+
 
             for(let articulo of articles){
+
                 if(e.target.dataset.value === articulo.dataset.value){
                     articulo.innerHTML = '';
                 }

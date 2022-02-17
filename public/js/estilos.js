@@ -96,7 +96,8 @@ getAll(0).then(() => {
     let numProductos = 0;
     for(let boton of botones){
         boton.addEventListener('click',function(e){
-            numProductos += 1;
+
+            numProductos = sessionStorage.length + 1;
             console.log(e);
             window.sessionStorage.setItem(numProductos,e.target.dataset.value);
 
