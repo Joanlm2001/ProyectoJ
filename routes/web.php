@@ -71,6 +71,8 @@ Route::resource('/cuenta', UserController::class)->parameters(['cuenta' => 'user
 
 Route::resource('/productos', ProductController::class)->parameters(["productos" => "product"]);
 
+Route::get('/categoria/{nombre}', [CategoryController::class,'categoriasXNombre']); //Añadida con Álex
+
 Route::resource('/categorias', CategoryController::class)->parameters((['categorias' => 'category']));
 
 //Ruta para las categorias
@@ -86,6 +88,7 @@ Route::get('/espejos', function () {
 
 Route::get('/muebles', function () {
     $products = Product::where('category','Muebles')->get();
+ /*    dd($products); */
     return view('categories.muebles', compact('products'));
 })->name('muebles');
 
