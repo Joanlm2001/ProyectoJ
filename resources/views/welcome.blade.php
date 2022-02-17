@@ -24,7 +24,7 @@
 
     </div>
     <div class="boton-ver-x">
-        <button href="#"> Ver Muebles</button>
+        <a href="{{route("muebles")}}"> Ver Muebles</a>
     </div>
 </section>
 
@@ -47,7 +47,7 @@
 
     </div>
     <div class="boton-ver-x">
-        <button href="#"> Ver Espejos</button>
+        <a href="{{route("espejos")}}"> Ver Espejos</a>
     </div>
 </section>
 
@@ -71,7 +71,7 @@
 
     </div>
     <div class="boton-ver-x">
-        <button href="#"> Ver Patas</button>
+        <a href="{{route("patas")}}"> Ver Patas</a>
     </div>
 </section>
 
@@ -87,9 +87,6 @@
             </article>
         </div>
     </div>
-    <div class="boton-ver-productos">
-        <button href="#"> Ver Muebles</button>
-    </div>
     <div id="textos-featured">
         <h1>ACCESORIOS</h1>
     </div>
@@ -97,7 +94,7 @@
 
     </div>
     <div class="boton-ver-x">
-        <button href="#"> Ver Accesorios</button>
+        <a href="{{route("accesorios")}}"> Ver Accesorios</a>
     </div>
 </section>
 
