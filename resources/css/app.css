@@ -1300,23 +1300,25 @@ a:link {
 }
 
 .divCompra{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    background-color: #a8f1a8;
+    margin: 0 auto;
+    padding: 2rem;
 }
 
 .divCompra p {
     font-size: 1.3rem;
-    font-weight: bold;
+    border-bottom: 2px solid;
+    text-align: center;
 }
 
 .divCompra h1{
-    font-size: 1.3rem;
+    font-size: 1.5rem;
     font-weight: bold;
+    margin-top: 1rem;
+    text-align: center;
 }
 .precio-final{
-    font-size: 1.6rem;
+    font-size: 2rem;
     font-weight: bold;
-    color: red;
+    color: var(--dorado);
+    text-align: center;
 }
