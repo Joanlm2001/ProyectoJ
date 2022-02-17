@@ -1,34 +1,22 @@
-/* Se ha cambiado */
 
-const d = document;
+let d = document;
+let containerMuebles = document.querySelector('#container-muebles');
+let containerEspejos = document.querySelector('#container-espejos');
+let containerPatas = document.querySelector('#container-patas');
+let containerAccesorios = document.querySelector('#container-accesorios');
 
-let estilo = d.querySelector('.estilo');
-let estiloProducto = estilo.textContent;
-estilo.textContent = estilo.textContent.toLocaleUpperCase();
-let divContainer = d.querySelector('#container-products');
-
-let contador = 0;
-let botonVerMas = d.createElement('button');
-let divBotonVerMas = d.querySelector('#boton-ver-mas');
-
-/* LEER PETICION API REST */
-
-const getAll = async (seguir) => {
+const getAll = async (lugar, categoria) => {
 
     try{
         let res = await fetch('/api/products');
         json = await res.json();
         console.log(json);
+        let contador = 0;
 
-        json.forEach((productos)=>{
+            json.forEach((productos)=>{
 
-            if(contador === 20){
-                botonVerMas.textContent = 'VER MAS';
-                divBotonVerMas.append(botonVerMas);
-            }else if(productos.id >= seguir){
-                if(productos.style === estiloProducto){
+                if(productos.category === categoria && contador !== 3){
                     contador ++;
-                    //console.log(contador);
                     let article = d.createElement('article');
                     let divImg = d.createElement('div');
                     let linkImg = d.createElement('a');
@@ -69,32 +57,20 @@ const getAll = async (seguir) => {
                     tituloProducto.append(linkH1);
                     divBoton.append(boton);
                     article.append(divImg,tituloProducto,descripcion,precio,divBoton);
-                    divContainer.append(article);
-                    /* Contador */
+                    lugar.append(article);
                 }
-            }
         });
-        contador = 0;
-
-        botonVerMas.addEventListener('click', function(e){
-            let seguir =+ 20;
-            botonVerMas.style = 'display: none';
-            getAll(seguir);
-        });
-
 
     }catch(err){
         let message = err.statusText || "Ocurrio un error";
-        divContainer.insertAdjacentHTML("afterend",`<p><b>Error ${err.status}: ${message} </b></p>`);
+        containerMuebles.insertAdjacentHTML("afterend",`<p><b>Error ${err.status}: ${message} </b></p>`);
     }
 }
 
-getAll(0).then()
+getAll(containerMuebles,'Muebles');
+getAll(containerAccesorios,'Accesorios');
+getAll(containerEspejos,'Espejos');
+getAll(containerPatas,'Patas');
 
-let botones = d.querySelectorAll('.boton-ver-producto');
-console.log(botones)
-for(let boton of botones){
-console.log(boton)
 
-}
 
