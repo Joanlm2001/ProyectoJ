@@ -2486,6 +2486,9 @@ a:link {
     cursor: pointer;
     width: 60%;
 }
+.textos-legales {
+    padding: 8rem;
+}
 /* Textos productos */
 .nombre-producto {
     font-size: 1.5rem;
@@ -2589,7 +2592,7 @@ a:link {
 }
 .au-container h2 {
     font-weight: bold;
-    font-size: 1rem;
+    font-size: 1.5rem;
 }
 /* .au-row {
     display: grid;
