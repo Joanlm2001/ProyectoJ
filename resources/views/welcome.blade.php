@@ -1,6 +1,5 @@
 @extends('layouts.layout')
 
-<script type="text/javascript" src="{!! asset('js/slider.js') !!}" defer></script>
 <script type="text/javascript" src="{!! asset('js/index.js') !!}" defer></script>
 
 @section('content')

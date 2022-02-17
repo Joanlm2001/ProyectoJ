@@ -4,8 +4,8 @@
 
 <section> <!-- Título -->
     <div id="textos-featured">
-        <h1>Shopping Cart</h1>
         <h2 id="subtitulo">Envío gratuíto para compras superiores a 1.000€</h2>
+        <h1>Shopping Cart</h1>
     </div>
 </section>
 

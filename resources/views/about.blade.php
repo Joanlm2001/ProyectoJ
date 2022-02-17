@@ -8,15 +8,15 @@
     </div>
 </section>
 <section>
-    <div class="au-row">
+    <div>
         <div class="au-column">
             <div class="au-card">
                 <div class="au-container">
-                    <h2>Jorge Román</h2>
-                    <p class="au-title">JS Manager</p>
-                    <p>Capaz de ingerir 5.000kcal en una merienda.</p>
-                    <p>jroman@projjject.com</p>
-                    <p><button class="boton-ver-producto">Contacto</button></p>
+                    <h1>Jorge Román</h1>
+                    <h2>JS Manager</h2>
+                    <h3>Capaz de ingerir 5.000kcal en una merienda.</h3>
+                    <h4><a href="mailto:jantoni@projjject.com">jroman@projjject.com</a></h4>
+                    <button type="button" class="boton-ver-producto">Contacto</button>
                 </div>
             </div>
         </div>
@@ -24,11 +24,11 @@
         <div class="au-column">
             <div class="au-card">
                 <div class="au-container">
-                    <h2>Joan Antoni</h2>
-                    <p class="au-title">CEO del backend</p>
-                    <p>99% fe en el Levante. 1% suerte.</p>
-                    <p>jantoni@projjject.com</p>
-                    <p><button class="boton-ver-producto">Contacto</button></p>
+                    <h1>Joan Antoni</h1>
+                    <h2>CEO del backend</h2>
+                    <h3>99% fe en el Levante. 1% suerte.</h3>
+                    <h4><a href="mailto:jantoni@projjject.com">jantoni@projjject.com</a></h4>
+                    <button type="button" class="boton-ver-producto">Contacto</button>
                 </div>
             </div>
         </div>
@@ -36,11 +36,11 @@
         <div class="au-column">
             <div class="au-card">
                 <div class="au-container">
-                    <h2>Javier Ariño</h2>
-                    <p class="au-title">Art Director</p>
-                    <p>Sabe dónde has puesto un doble espacio.</p>
-                    <p>jarino@projjject.com</p>
-                    <p><button class="boton-ver-producto">Contacto</button></p>
+                    <h1>Javier Ariño</h1>
+                    <h2>Art Director</h2>
+                    <h3>Sabe dónde has puesto un doble espacio.</h3>
+                    <h4><a href="mailto:jantoni@projjject.com">jarino@projjject.com</a></h4>
+                    <button type="button" class="boton-ver-producto">Contacto</button>
                 </div>
             </div>
         </div>
