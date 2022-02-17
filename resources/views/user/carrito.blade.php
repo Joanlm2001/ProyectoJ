@@ -15,7 +15,7 @@
 
 <section><!-- Botón Comprar -->
     <div id="boton-comprar">
-        <button href="#">Finalizar compra</button>
+        <button href="#" class="compra">Finalizar compra</button>
     </div>
 </section>
 

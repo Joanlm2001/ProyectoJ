@@ -69,7 +69,7 @@ const generarCarrito = async function(){
 generarCarrito().then(()=>{
     let botones = document.querySelectorAll('.boton-eliminar');
     let articles = document.querySelectorAll('article');
-    let botonFinalizarCompra = document.querySelector('')
+    let botonFinalizarCompra = document.querySelector('.compra')
 
     for(let boton of botones){
         boton.addEventListener('click',function(e){
@@ -93,6 +93,38 @@ generarCarrito().then(()=>{
 
         });
     }
+    botonFinalizarCompra.addEventListener('click', async function(){
+
+        let arrayProductos = obtenerDatos();
+        let res = await fetch('/api/products');
+        json = await res.json();
+        let precioFinal = 0;
+        let div = document.createElement('div');
+        let precioFin = document.createElement('p');
+        for(let index of arrayProductos){
+
+            for(let productos in json){
+                //console.log(json[productos].id);
+                if(json[productos].id == index){
+
+
+                    let titulo = document.createElement('h1');
+                    titulo.textContent = `Artículo: ${json[productos].name}`;
+                    let precio = document.createElement('p');
+                    precio.textContent = `Precio: ${json[productos].price}€`;
+                    precioFinal += json[productos].price;
+
+                    div.append(titulo);
+                    div.append(precio);
+                }
+            }
+        }
+        precioFin.textContent = `Precio final: ${precioFinal} €`;
+        div.append(precioFin);
+        sessionStorage.clear();
+        divContainer.innerHTML = '';
+        divContainer.append(div);
+    });
 
 
 });
