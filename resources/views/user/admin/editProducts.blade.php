@@ -85,7 +85,8 @@
 </section>
 
 <section>
-    <button type="button" class="boton-ver-producto">Volver</button>
+    {{-- <button type="button" class="boton-ver-producto">Volver</button> --}}
+    <a  class="boton-ver-producto" href="{{route('admin')}}">Volver</a>
 </section>
 
 @endsection

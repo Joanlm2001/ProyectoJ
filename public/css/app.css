@@ -1757,6 +1757,9 @@ a:link{
 .cursor {
     cursor: pointer;
 }
+.negrita {
+    font-weight: bold;
+}
 /* Fin aplicación general */
 #scroll-top {
     display: none;
@@ -2155,20 +2158,30 @@ a:link {
 #subtitulo {
     font-size: 1rem;
     font-family: var(--texto);
-    letter-spacing: 0;
     border: 2px solid;
-    padding: 0.5rem 1rem;
+    padding: 1rem 2rem;
     color: var(--dorado);
+    margin-bottom: 3rem;
+}
+#seccion-carrito-compra {
+    margin: 5rem 0
 }
 .cart {
     display: flex;
     flex-direction: row;
     align-items: center;
     border: 2px solid;
-    margin: 1rem 10rem;
+    margin: 1rem 8rem;
 }
 .cart img {
     width: 30%;
+    margin: 3rem;
+}
+.cart h1 {
+    font-size: 2rem;
+    font-weight: 800;
+}
+.cart div{
     margin: 1rem;
 }
 .precio-cart {
@@ -2179,11 +2192,12 @@ a:link {
     border-bottom: 2px solid;
     width: 90%;
     text-align: center;
+    margin: 1rem 0;
 }
 #boton-comprar {
     display: flex;
     justify-content: center;
-    padding: 2rem;
+    margin: 4rem;
 }
 #boton-comprar button {
     text-transform: uppercase;
@@ -2195,25 +2209,30 @@ a:link {
     background-color: var(--azulOscuro);
     border-radius: 0.3rem;
     transition: 100ms cubic-bezier(0.77, 0, 0.175, 1);
+    width: 85%;
 }
 #boton-comprar button:hover {
     transform: scale(1.05);
 }
 .cart button {
-   /*  background-color: rgba(216, 92, 92, 0.972); */
-   background-color: var(--gris);
+    background-color: var(--gris);
     color: var(--azulOscuro);
     font-family: var(--texto);
     font-weight: bold;
     text-transform: uppercase;
-    padding: 0.5rem;
+    padding: 1rem;
+    margin: 1rem 0;
     transition: 100ms cubic-bezier(0.77, 0, 0.175, 1);
 }
 .cart button:hover {
     transform: scale(1.05);
 }
 /************** Fin de SHOPPING CART **************/
+
+
 /************************************************************** MAIN *********************************************************************/
+
+
 /****************** SLIDER ********************/
 /* Animación Slider */
 .fade {
@@ -2272,11 +2291,10 @@ a:link {
     font-size: initial;
     font-family: 'Domine', 'serif';
     font-weight: bold;
-    height: 3rem;
     width: -webkit-max-content;
     width: -moz-max-content;
     width: max-content;
-    padding: 0 2rem;
+    padding: 1rem;
     border-radius: 2rem;
     border-style: none;
     cursor: pointer;
@@ -2323,11 +2341,10 @@ a:link {
     font-size: initial;
     font-family: 'Domine', 'serif';
     font-weight: bold;
-    height: 3rem;
     width: -webkit-max-content;
     width: -moz-max-content;
     width: max-content;
-    padding: 0 2rem;
+    padding: 0.8rem 2rem;
     border: 2px solid var(--azulOscuro);
     cursor: pointer;
     transition: all 400ms cubic-bezier(0.77, 0, 0.175, 1);
@@ -2378,15 +2395,15 @@ a:link {
     font-size: initial;
     font-family: 'Domine', 'serif';
     font-weight: bold;
-    height: 3rem;
     width: -webkit-max-content;
     width: -moz-max-content;
     width: max-content;
-    padding: 0 2rem;
     border-radius: 2rem;
     border-style: none;
     cursor: pointer;
     transition: all 400ms cubic-bezier(0.77, 0, 0.175, 1);
+    padding: 1rem;
+
 }
 #btn-slider-03:hover {
     background-color: var(--azulClaro);
@@ -2436,11 +2453,11 @@ a:link {
     width: -webkit-max-content;
     width: -moz-max-content;
     width: max-content;
-    padding: 0 2rem;
     border-radius: 2rem;
     border: 2px solid white;
     cursor: pointer;
     transition: all 400ms cubic-bezier(0.77, 0, 0.175, 1);
+    padding: 1rem;
 }
 #btn-slider-04:hover {
     background-color: var(--dorado);
@@ -2482,6 +2499,9 @@ a:link {
     z-index: -1;
     cursor: pointer;
     width: 60%;
+}
+.textos-legales {
+    padding: 4rem 8rem;
 }
 /* Textos productos */
 .nombre-producto {
@@ -2551,7 +2571,7 @@ a:link {
 }
 /* Fin de botón Ver más */
 /* Botón Ver más x */
-.boton-ver-x button {
+.boton-ver-x a {
     text-transform: uppercase;
     font-weight: bold;
     font-size: 1.8rem;
@@ -2561,10 +2581,46 @@ a:link {
     border-radius: 0.3rem;
     transition: 400ms cubic-bezier(0.77, 0, 0.175, 1);
 }
-.boton-ver-x button:hover {
+.boton-ver-x a:hover {
     transform: scale(1.03);
 }
 /* Fin de botón Ver más x */
+/********************* PÁGINA ABOUT US ********************/
+.au-column {
+    margin: 3rem;
+}
+.au-card {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    margin: 1rem;
+}
+.au-section {
+    padding: 2rem;
+    text-align: center;
+    background-color: #474e5d;
+    color: white;
+}
+.au-container {
+    padding: 1rem;
+    text-align: center;
+}
+.au-container h1 {
+    font-weight: bold;
+    font-size: 2rem;
+    padding-bottom: 1rem;
+}
+.au-container h2 {
+    color: grey;
+    font-size: 1.5rem;
+    padding-bottom: 1rem;
+}
+.au-container h4 {
+    font-weight: bold;
+    color: var(--azulClaro);
+    padding: 1rem;
+    cursor: pointer;
+}
+/********************* Fin de PÁGINA ABOUT US ********************/
+
 /************************************************************** FOOTER *********************************************************************/
 #contenedor-footer {
     display: grid;
@@ -2673,6 +2729,22 @@ a:link {
     justify-content: flex-end;
     align-items: center;
 }
+
+
+/* Login y Registro */
+.boton-registro {
+    height: 3rem;
+    width: 100%;
+    background-color: var(--azulClaro);
+    font-size: 1rem;
+    font-weight: bold;
+    font-family: 'Open Sans';
+    margin: 2rem 0;
+}
+/* Fin de Login y Registro */
+
+
+
 /************************************* MEDIA QUERYS *************************************/
 /* TABLETS */
 @media screen and (min-width: 651px) and (max-width: 900px) {
@@ -2686,6 +2758,12 @@ a:link {
         text-align: center;
     }
 
+
+/*     /* ABOUT US
+    .au-row {
+        display: grid;
+        justify-items: stretch;
+    } */
 
 
     /* FOOTER */
@@ -2823,6 +2901,16 @@ a:link {
         flex-direction: column;
     }
 
+    .cart div {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .cart div p {
+        text-align: center;
+    }
+
     /************** Fin de SHOPPING CART **************/
 
 
@@ -2868,6 +2956,28 @@ a:link {
 }
 .categoria{
     margin-bottom: 50px;
+}
+.divCompra{
+    margin: 0 auto;
+    padding: 2rem;
+}
+.divCompra p {
+    font-size: 1.5rem;
+    border-bottom: 2px solid;
+    text-align: center;
+    margin-top: 1rem;
+}
+.divCompra h1{
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-top: 2rem;
+    text-align: center;
+}
+.precio-final{
+    font-size: 2rem;
+    font-weight: bold;
+    color: var(--dorado);
+    text-align: center;
 }
 .hover\:border-gray-300:hover {
   --tw-border-opacity: 1;

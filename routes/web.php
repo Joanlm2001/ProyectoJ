@@ -4,11 +4,11 @@ use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProductController;
+use App\Models\Product;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
-use App\Models\Product;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -29,30 +29,40 @@ Route::get('/error', function () {
 })->name('error');
 
 
-/* //Rutas del admin
+//Rutas del admin
 Route::get('/user/admin', function () {
-    if (Auth::user()->rol === 'admin') {
+    if (Auth::user()->admin) {
         return view('/user/admin/index');
     } else {
-        redirect()->route('register');
+        abort(403, 'Unauthorized action.');
     }
-})->middleware(['auth:sanctum', 'verified']); */
+})->name('admin')->middleware('auth');
 
-/* Route::get('admin/products', function() {
+Route::get('user/admin/products', function() {
     $products = Product::all();
-    return view('admin/products', compact('products'));
-})->name('Productos')->middleware('admin'); */
+    if (Auth::user()->admin) {
+        return view('/user/admin/index', compact('products'));
+    } else {
+        abort(403, 'Unauthorized action.');
+    }
+})->name('Productos')->middleware('auth');
 //Rutas del admin: Activar para entrar a vista Admin sin loguearte
-Route::get('/user/admin', function () {
-         return view('/user/admin/index');
-});
 
 Route::get('/user/admin/stock', function () {
-        return view('/user/admin/gestStock');
+    $products = Product::all();
+    if (Auth::user()->admin) {
+        return view('/user/admin/gestStock', compact('products'));
+    } else {
+        abort(403, 'Unauthorized action.');
+    }
 })->name('Stock');
 
 Route::get('/user/admin/users', function () {
-    return view('/user/admin/gestUsers');
+    if (Auth::user()->admin) {
+        return view('/user/admin/gestUsers');
+    } else {
+        abort(403, 'Unauthorized action.');
+    }
 })->name('Usuarios');
 
 Route::get('/user/admin/products', function () {
@@ -67,38 +77,46 @@ Route::get('client', function () {
 
 //Ruta del carrito
 Route::get('carrito', function () {
-    return view('/user/carrito');
-});
+    if (!Auth::user()->admin) {
+        return view('/user/carrito');
+    }else{
+        abort(403, 'Unauthorized action.');
+    }
+})->name('Carrito');
 
 //Ruta para la pagina de los usuarios
 Route::resource('/cuenta', UserController::class)->parameters(['cuenta' => 'user'])->middleware(['auth']);
 
 Route::resource('/productos', ProductController::class)->parameters(["productos" => "product"]);
 
+Route::get('/categoria/{nombre}', [CategoryController::class,'categoriasXNombre']); //Añadida con Álex
+
 Route::resource('/categorias', CategoryController::class)->parameters((['categorias' => 'category']));
 
 //Ruta para las categorias
 Route::get('/accesorios', function () {
-    $products= Product::where('category','accesorios')->get();
-    return view('/categories/accesorios',compact('products'));
+    $products = Product::where('category','Accesorios')->get();
+    return view('categories.accesorios', compact('products'));
 })->name('accesorios');
 
 Route::get('/espejos', function () {
-    $products= Product::where('category','Espejos')->get();
-    return view('/categories/espejos',compact('products'));
+    $products = Product::where('category','Espejos')->get();
+    return view('categories.espejos', compact('products'));
 })->name('espejos');
 
 Route::get('/muebles', function () {
-    $products= Product::where('category','Muebles')->get();
-    return view('/categories/muebles',compact('products'));
+    $products = Product::where('category','Muebles')->get();
+ /*    dd($products); */
+    return view('categories.muebles', compact('products'));
 })->name('muebles');
 
 Route::get('/patas', function () {
-    return view('/categories/patas');
+    $products = Product::where('category','Patas')->get();
+    return view('categories.patas', compact('products'));
 })->name('patas');
 
 Route::get('listacategorias', function(){
-    return view('/categories/show');
+    return view('categories.show');
 })->name('listacategorias');
 /* Route::get('/categorias', function () {
     return view('/categories/index');
@@ -150,7 +168,7 @@ Route::get('/terminos', function () {
 })->name('terminos');
 
 Route::get('/galletas', function () {
-    return view('coockies');
+    return view('cookies');
 })->name('galletas');
 
 Route::get('/nosotros', function () {

@@ -4,7 +4,7 @@
 
 <section> <!-- Título -->
     <div class="titulo-gestion">
-        <h1>Bienvenid@ {{$user->name}}</h1>
+        <h1>¡Bienvenid@!</h1>
     </div>
 </section>
 

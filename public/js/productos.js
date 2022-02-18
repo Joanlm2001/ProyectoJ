@@ -6,7 +6,8 @@ let categoria = d.querySelector('.categoria');
 let categoriaProducto = categoria.textContent;
 categoria.textContent = categoria.textContent.toLocaleUpperCase();
 let divContainer = d.querySelector('#container-products');
-
+let miniCarrito = d.querySelector('#header-count');
+miniCarrito.textContent = sessionStorage.length;
 let contador = 0;
 let botonVerMas = d.createElement('button');
 let divBotonVerMas = d.querySelector('#boton-ver-mas');
@@ -18,7 +19,7 @@ const getAll = async (seguir) => {
     try{
         let res = await fetch('/api/products');
         json = await res.json();
-        //console.log(json);
+        console.log(json);
 
         json.forEach((productos)=>{
 
@@ -70,12 +71,13 @@ const getAll = async (seguir) => {
                     divBoton.append(boton);
                     article.append(divImg,tituloProducto,descripcion,precio,divBoton);
                     divContainer.append(article);
-                    /* Contador */
+                    /* Database */
+                    boton.dataset.value = productos.id;
+                    console.log(boton.dataset)
                 }
             }
         });
         contador = 0;
-
         botonVerMas.addEventListener('click', function(e){
             let seguir =+ 20;
             botonVerMas.style = 'display: none';
@@ -89,12 +91,22 @@ const getAll = async (seguir) => {
     }
 }
 
-getAll(0).then()
+getAll(0).then(() => {
+    let botones = d.querySelectorAll('.boton-ver-producto');
+    let numProductos = 0;
 
-let botones = d.querySelectorAll('.boton-ver-producto');
-console.log(botones)
-for(let boton of botones){
-console.log(boton)
+    for(let boton of botones){
+        boton.addEventListener('click',function(e){
+            numProductos = sessionStorage.length + 1;
+            console.log(e);
+            window.sessionStorage.setItem(numProductos,e.target.dataset.value);
+            miniCarrito.textContent = sessionStorage.length;
+        })
+    }
 
-}
+
+
+})
+
+
 
