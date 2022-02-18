@@ -32,7 +32,8 @@
         <div id="slider-03">
             <article>
                 <h1 id="texto-slider-03">Estructuras a la vista</h1><!--Texto H1-->
-                <h2>Muebles de baño con mucho carácter</h2>
+                <h2>
+                     de baño con mucho carácter</h2>
                 <div>
                     <button id="btn-slider-03">Ver estilo Industrial</button><!--Botón-->
                 </div>

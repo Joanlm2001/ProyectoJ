@@ -8,6 +8,7 @@ use Illuminate\Support\Facades\Redirect;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
+use App\Models\Product;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -37,6 +38,10 @@ Route::get('/user/admin', function () {
     }
 })->middleware(['auth:sanctum', 'verified']); */
 
+/* Route::get('admin/products', function() {
+    $products = Product::all();
+    return view('admin/products', compact('products'));
+})->name('Productos')->middleware('admin'); */
 //Rutas del admin: Activar para entrar a vista Admin sin loguearte
 Route::get('/user/admin', function () {
          return view('/user/admin/index');
@@ -74,15 +79,18 @@ Route::resource('/categorias', CategoryController::class)->parameters((['categor
 
 //Ruta para las categorias
 Route::get('/accesorios', function () {
-    return view('/categories/accesorios');
+    $products= Product::where('category','accesorios')->get();
+    return view('/categories/accesorios',compact('products'));
 })->name('accesorios');
 
 Route::get('/espejos', function () {
-    return view('/categories/espejos');
+    $products= Product::where('category','Espejos')->get();
+    return view('/categories/espejos',compact('products'));
 })->name('espejos');
 
 Route::get('/muebles', function () {
-    return view('/categories/muebles');
+    $products= Product::where('category','Muebles')->get();
+    return view('/categories/muebles',compact('products'));
 })->name('muebles');
 
 Route::get('/patas', function () {
@@ -99,28 +107,39 @@ Route::get('listacategorias', function(){
 
 //Ruta para los estilos
 Route::get('/boho', function () {
-    return view('/styles/boho');
+    $products= Product::where('style','Boho')->get();
+    return view('/styles/boho',compact('products'));
+})->name('espejos');
+
+Route::get('/boho', function () {
+    $products= Product::where('style','Boho')->get();
+    return view('/styles/boho',compact('products'));
 })->name('boho');
 
 Route::get('/glamour', function () {
-    return view('/styles/glamour');
+    $products= Product::where('style','Glamour')->get();
+    return view('/styles/glamour',compact('products'));
 })->name('glamour');
 
 Route::get('/industrial', function () {
-    return view('/styles/industrial');
+    $products= Product::where('style','Industrial')->get();
+    return view('/styles/industrial',compact('products'));
 })->name('industrial');
 
+
 Route::get('/nordico', function () {
-    return view('/styles/nordico');
+    $products= Product::where('style','Iordico')->get();
+    return view('/styles/nordico',compact('products'));
 })->name('nordico');
+
 /* Route::get('/estilos', function () {
     return view('/styles/index');
 }); */
 
-Route::get('/estilos/productos', function () {
-    return view('/styles/show');
-});
 
+Route::get('/products/index', function () {
+    return view('/products/index');
+});
 //Rutas footer
 Route::get('/politica', function () {
     return view('policy');

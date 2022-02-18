@@ -37,49 +37,6 @@ class UserApiController extends Controller
      */
     public function store(Request $request)
     {
-        $user = new User();
-        //Nombre
-        $nameValidar = $request->name;
-        if ($nameValidar === '' || $nameValidar == null || is_numeric($nameValidar)) {
-            return "El nombre no es correcto";
-        } else {
-            $nameValidar = $user->name;
-        }
-        //Rol
-        $rolValidar = $request->rol;
-        if ($rolValidar  === '' || $rolValidar == null ||  is_numeric($rolValidar) || $rolValidar !== "Admin" || $rolValidar !== "Cliente") {
-            return "El rol no es valido";
-        } else {
-            return $user->rol = $rolValidar;
-        }
-
-        //DNI
-        $cadenaValidar = $request->dni;
-        if ($request->dni === '' || $request->dni == null) {
-            return "La cadena del DNI esta vacia";
-        }
-
-        $cadenaValidacion = "TRWAGMYFPDXBNJZSQVHLCKE";
-        $cadenaValidar = rtrim($cadenaValidar);
-        $cadenaValidar = substr($cadenaValidar, 0, -1);
-        $charValidar = $cadenaValidar % 23;
-
-        if ($charValidar !== $cadenaValidacion[$charValidar]) {
-            return "DNI erroneo";
-        } else {
-            $user->dni = $cadenaValidar;
-            return $cadenaValidar;
-        }
-
-        $user->name = $request->name;
-        $user->rol = $request->rol;
-        $user->dni = $request->dni;
-        $user->email = $request->email;
-        $user->avatar = $request->avatar;
-        $user->password = $request->password;
-        $user->save();
-
-        return response()->json(["nombre" => $user->name], 201);
     }
 
     /**
@@ -111,7 +68,7 @@ class UserApiController extends Controller
      * @param  \App\Models\User  $user
      * @return \Illuminate\Http\Response
      */
-    /*
+
 
     public function devolverIndex(User $user)
     {
@@ -120,10 +77,12 @@ class UserApiController extends Controller
 
     public function update(Request $request, User $user)
     {
+        $user->name = $request->name;
+        $user->rol = $request->rol;
+        $user->dni = $request->dni;
         $user->email = $request->email;
         $user->avatar = $request->avatar;
         $user->password = $request->password;
-
         $user->save();
 
         return response()->json(["nombre" => $user->name], 201);
